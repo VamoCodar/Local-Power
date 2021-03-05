@@ -1,0 +1,50 @@
+{
+    // SASS COMPILE ============================================
+    "liveSassCompile.settings.formats": [{
+            "format": "compressed", //compressed or expanded 
+            "extensionName": ".css",
+            "savePath": "/assets/css" //diretorio para salvar o arquivo .css
+        },
+
+    ],
+
+    //lista de pasta para não compilar
+    "liveSassCompile.settings.excludeList": [
+
+        "**/node_modules/**",
+        "**/Antigo/**",
+        ".vscode/**",
+        // "**/slick/**",
+
+    ],
+
+    //config que gera .map 
+    "liveSassCompile.settings.generateMap": true,
+
+    // prefix
+    "liveSassCompile.settings.autoprefix": [
+        "> 2%",
+        // "last 2 versions"
+    ],
+
+    //nao mostra a barra || open output  ctrl+shift+u
+    "liveSassCompile.settings.showOutputWindow": false,
+
+    //config pessoais
+    "editor.lineHeight": 26,
+    "workbench.editor.tabSizing": "fit",
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// https://ritwickdey.github.io/vscode-live-sass-compiler/docs/settings.html

@@ -1,0 +1,211 @@
+// alterações do menu home
+.menu {
+    background: transparent;
+
+    a:not(a.menu__btn) {
+        color: white;
+        letter-spacing: .5px;
+    }
+
+    #dropdown__content {
+        a {
+            color: white;
+            font-weight: 600;
+            @include text-shadow;
+
+        }
+    }
+}
+
+&.ativo__scroll {
+    .menu {
+        background: white !important;
+
+        a:not(a.menu__btn) {
+            color: $preto;
+
+            strong {
+                font-weight: 400;
+            }
+        }
+
+        #dropdown__content {
+            background: white;
+
+            a {
+                color: $preto;
+                font-weight: 400;
+                text-shadow: initial;
+            }
+        }
+    }
+}
+
+// intro
+.intro {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    &:before {
+        @include bg-props-cover;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: image("intro-home.jpg");
+        filter: brightness(.9);
+        z-index: -1;
+
+        @include d(s) {
+            background-image: image("intro-home-mobile.jpg");
+
+        }
+    }
+
+    &__wrapper {
+        @include size(100%);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__text {
+        color: white;
+
+        h1,
+        p {
+            max-width: 570px;
+
+            @include text-shadow;
+
+            strong {
+                font-weight: 600;
+            }
+        }
+
+        h1 {
+            font-size: clamp(32px, 3vw, 48px);
+            font-weight: 700;
+            line-height: 140%;
+        }
+
+        p {
+            margin-top: 40px;
+            font-size: 20px;
+            line-height: 180%;
+
+            @include d(m) {
+                font-size: 16px;
+            }
+
+        }
+
+    }
+}
+
+
+.residenciais {
+    height: 100vh;
+
+    &__wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+
+        @include d(s) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    .img__container {
+        position: relative;
+        height: 100vh;
+
+        @include d(s) {
+            height: 300px;
+        }
+
+        >.container {
+            max-width: 580px;
+        }
+
+        img {
+            position: absolute;
+            @include size(100%);
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(.8);
+
+        }
+    }
+
+    .titulo__principal {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            @include texto__foto;
+        }
+    }
+
+    .titulo__secundario {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 100px 40px;
+        max-width: 400px;
+        margin: 0 auto;
+        height: 100%;
+
+        @include d(s) {
+            padding-top: 30px;
+        }
+
+        h2 {
+            color: $preto;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            text-align: center;
+
+            @include d(s) {
+                font-size: 26px;
+            }
+        }
+
+        p {
+            color: $preto;
+            line-height: 150%;
+            font-weight: 600;
+
+            @include d(s) {
+                text-align: center;
+            }
+
+        }
+
+        p+p {
+            margin-top: 30px;
+        }
+
+        a {
+            @include botao;
+            text-align: center;
+            max-width: 240px;
+            justify-content: center;
+            margin: 0 auto;
+            // margin-bottom: 40px;
+            margin-top: auto;
+            padding: 8px 30px;
+
+            @include d(s) {
+                margin-top: 60px;
+            }
+
+        }
+    }
+}

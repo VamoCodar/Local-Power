@@ -1,0 +1,26 @@
+@import "../sass/utilities/fonts"; //Fonts
+
+@import "../sass/variaves__mixins"; //VARIAVEIS E MIXINS
+@import "bootstrap__imports"; //BOOTSTRAP
+
+// UTILITIES
+@import "../sass/utilities/geral"; //utilitarios
+@import "../sass/utilities/responsivo"; //  RESPONSIVO
+@import "../sass/utilities/reset"; // reset
+@import "../sass/utilities/animation"; // animation
+@import "../sass/utilities/assets__helper"; // animation
+
+//COMPONENTS GERAIS
+@import "../sass/components/menu";
+// @import "../sass/components/footer";
+
+body {
+  overflow-x: hidden;
+  height: 3000px;
+  /* TEMPORRARIO */
+  font-family: $font;
+}
+
+.body__home {
+  @import "../sass/pages/page__home";
+}
