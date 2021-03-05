@@ -1,0 +1,108 @@
+& {
+    height: 100vh;
+
+    @include d(s) {
+        height: 100%;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+
+        @include d(s) {
+            flex-flow: column nowrap;
+        }
+    }
+
+    .img__container {
+        position: relative;
+        height: 100vh;
+
+        @include d(s) {
+            height: 300px;
+        }
+
+        >.container {
+            max-width: 580px;
+        }
+
+        img {
+            position: absolute;
+            @include size(100%);
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(.8);
+
+        }
+    }
+
+    .titulo__principal {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        h1 {
+            @include texto__foto;
+            text-transform: uppercase;
+            font-family: $poppins;
+        }
+    }
+
+    .titulo__secundario {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 100px 40px;
+        max-width: 400px;
+        margin: 0 auto;
+        height: 100%;
+
+        @include d(s) {
+            padding-top: 30px;
+        }
+
+        h2 {
+            color: $preto;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: $poppins;
+
+
+            @include d(s) {
+                font-size: 26px;
+            }
+        }
+
+        p {
+            color: $preto;
+            line-height: 150%;
+            font-weight: 300;
+
+            @include d(s) {
+                text-align: center;
+            }
+
+        }
+
+        p+p {
+            margin-top: 30px;
+        }
+
+        a {
+            @include botao;
+            text-align: center;
+            max-width: 240px;
+            justify-content: center;
+            margin: 0 auto;
+            // margin-bottom: 40px;
+            margin-top: auto;
+            padding: 8px 30px;
+
+            @include d(s) {
+                margin-top: 60px;
+            }
+
+        }
+    }
+}

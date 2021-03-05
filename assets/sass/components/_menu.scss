@@ -82,6 +82,7 @@
     width: 100%;
     z-index: var(--menu-z-index);
     top: 0;
+    font-family: 'Poppins', sans-serif;
 
     .container {
         @include d(ll) {
@@ -150,6 +151,8 @@ a.menu__btn {
     font-weight: var(--btn-weight);
     transition: background 0.4s ease;
     @include botao;
+    padding: 6px 15px;
+    border-radius: 20px;
 }
 
 a.menu__btn:hover {
@@ -631,9 +634,8 @@ a.menu__btn:hover {
     position: relative;
     align-items: center;
     gap: 10px;
-    &:not(.btn)
 
-    ion-icon {
+    &:not(.btn) ion-icon {
         font-size: 22px;
 
     }

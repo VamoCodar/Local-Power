@@ -7,6 +7,8 @@ $cinza-claro:#7a7a7c;
 
 $font: "Gotham",
 sans-serif;
+$poppins: 'Poppins',
+sans-serif;
 
 
 // PROJETO ===================================================
@@ -47,16 +49,16 @@ sans-serif;
     color: $color;
     cursor: pointer;
     transition: 0.3s ease;
-    font-weight: 500;
     position: relative;
     overflow: hidden;
-
+    font-weight: 400;
     &:hover {
         background-color: #d64400;
     }
 
 
 }
+
 // @mixin botao($bg:$laranja, $color:white) {
 //     border-radius: 30px;
 //     padding: 8px 0;
