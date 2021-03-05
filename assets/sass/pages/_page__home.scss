@@ -55,12 +55,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: image("intro-home.jpg");
+        background-image: url("/assets/img/intro-home.jpg");
         filter: brightness(.9);
         z-index: -1;
 
         @include d(s) {
-            background-image: image("intro-home-mobile.jpg");
+            background-image: url("/assets/img/intro-home-mobile.jpg");
+
 
         }
     }
