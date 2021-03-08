@@ -674,7 +674,7 @@ a.menu__btn:hover {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
+            gap: 10px;
 
             .menu__btn {
                 @include botao;

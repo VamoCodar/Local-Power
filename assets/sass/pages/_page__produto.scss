@@ -272,7 +272,7 @@
 
     &__wrapper {
         @include bg-props-contain;
-        background-image: url("/assets/img/clientes.png");
+        background-image: url("../img/clientes.png");
         display: block;
         height: 600px;
         width: 100%;
@@ -303,7 +303,7 @@
     @import "../components/quebra";
 
     span {
-        background-image: url("/assets/img/intro-home.jpg");
+        background-image: url("../img/intro-home.jpg");
 
     }
 }
