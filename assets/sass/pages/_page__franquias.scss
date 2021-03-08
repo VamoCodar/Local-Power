@@ -31,10 +31,6 @@
     .menu__links a:not(a.menu__btn, .atalhos a) {
         text-shadow: 0px 2px 5px rgb(0 0 0 / 30%);
     }
-
-    .menu__links li:first-child>a {
-        color: $laranja !important;
-    }
 }
 
 &.ativo__scroll {
@@ -49,65 +45,167 @@
     }
 }
 
+.container {
+    max-width: 1280px;
+}
+
 .franquias {
-    position: relative;
     height: 100vh;
+    width: 100%;
+    position: relative;
 
-    &__img {
-        @include size(100%);
+    &:before {
+        @include bg-props-cover;
+        content: "";
         position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("/assets/img/franquias-hero.jpg");
+        filter: brightness(.4); // COMM Menos brilho
+        z-index: -1;
 
-        span {
-            @include bg-props-cover;
-            background-image: url(../img/empresa.jpg);
-            @include size(100%);
-            position: absolute;
-            object-fit: cover;
-            filter: grayscale(.6);
-            z-index: -1;
-
-            @include d(m) {
-                background-image: url(../img/empresa-mobile.jpg);
-
-            }
+        @include d(s) {
+            background-image: url("/assets/img/franquias-hero.jpg");
         }
     }
 
-    .franquias__text {
-        z-index: 2;
+
+    &__wrapper {
         height: 100vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        color: $cinza-escuro;
-        font-weight: 300;
-        font-family: $font;
+        align-items: center;
+    }
+    &__text {
+        color: white;
 
-        h1 {
-            color: $cinza-escuro;
-            font-size: clamp(28px, 5vw, 42px);
-            text-shadow: 0px 2px 5px rgb(0 0 0 / 30%);
-            line-height: 140%;
-            z-index: 2;
+        h1,
+        p {
+            max-width: 570px;
 
+            @include text-shadow;
+
+            strong {
+                font-weight: 600;   
+            }
+        }
+    }
+    h1 {
+        font-family: $poppins;
+        font-size: clamp(24px, 3vw, 36px);  // COMM Alterei os valores para parecer mais com o modelo
+        font-weight: 600; // COMM Aqui também, 700 pareceu muito
+        line-height: 140%;
+
+    }
+
+    p {
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: 180%;
+        font-weight: 500;
+        font-family: $poppins;
+        letter-spacing: .5px;
+
+        @include d(m) {
+            font-size: 16px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 170%;
-            font-family: $poppins;
-            text-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
-            margin-top: 40px;
-            z-index: 2;
+    }
 
-            @include d(s) {
-                font-size: 16px;
-                margin-top: 20px;
+    &__contact {
+        h3, p {
+            color: white;
+            text-align: center;
+            @include text-shadow;
+            font-family: $poppins;
+        }
+        h3 {
+            font-weight: 600;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .franquias-bg{
+            z-index: -1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            padding: 32px;
+            background-color: rgba(30, 30, 30, 0.6);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            // filter: blur(8px);
+        }
+        .franquia-card{
+            padding: 8px 16px;
+        }
+        form{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 6px 12px;
+            justify-content: center;
+            @include d(m){
+                padding: 0;
+            }  
+        }
+        form > input, form > div{
+            color: white;
+            padding: 10px 16px;
+            margin: 12px 16px;
+            background-color: #f1642298;
+            border: none; 
+            border-radius: 25px;
+            width: 40%;
+
+            &::placeholder{
+                color: white;
+            }
+            @include d(m){
+                width: 40%;
+                margin-left: 5px;
+                margin-right: 5px;
 
             }
-
+            @include d(s){
+                width: 95%;
+                margin: 4px;
+                
+            }
         }
-
+        #archive {
+            display: flex;
+            align-items: center;
+            font-size: 12px;     
+            @include d(m){
+                font-size: 10px;
+            } 
+            @include d(s){
+                font-size: 12px;
+            }     
+        }
+        #archive button{
+            @include botao;
+            font-size: 10px;
+            padding: 1px 4px;
+            margin-left: auto;  
+            @include d(m){
+                font-size: 8px;
+            }
+        }
+        #submit{
+            @include botao;
+            width: auto;
+            margin-left: auto;
+            margin-right: 40px;
+        }
     }
 }
 
