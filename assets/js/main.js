@@ -1,14 +1,23 @@
 //  PAGES
 const pageHome = document.querySelector("#page__home")
+const pageProduto = document.querySelector("#page__produto")
 
 
 function escopoPages() {
+
+    //page HOME ========================
     if (pageHome) {
         document.body.classList.add("body__home")
+    }
 
+    //page produto ====================
+    else if (pageProduto) {
+        document.body.classList.add("body__produto")
 
+        // 
     }
 }
+
 escopoPages()
 
 

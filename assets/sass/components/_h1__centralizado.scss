@@ -1,0 +1,25 @@
+& {
+    font-family: $poppins;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 40px;
+    position: relative;
+    display: inline-flex;
+    width: max-content;
+    text-transform: uppercase;
+
+    @include d(s) {
+        zoom: .9;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        background: #e26d37;
+        width: 130px;
+        height: 3px;
+        display: block;
+        bottom: -5px;
+        left: 0;
+    }
+}

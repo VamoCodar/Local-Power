@@ -321,6 +321,7 @@ a.menu__btn:hover {
 .atalhos {
     display: none;
     transform: translateX(100%);
+    overflow: auto;
 }
 
 /* wrapper mobile */
@@ -465,10 +466,8 @@ a.menu__btn:hover {
         display: block;
         padding: var(--menu-m-paddingY);
         background: var(--menu-m-bg);
+        color: $preto;
     }
-
-
-
 
 
 }
@@ -698,4 +697,28 @@ a.menu__btn:hover {
 
 .menu__open .menu__desktop .menu__logo {
     z-index: 1000000000000;
+}
+
+.menu__dropdown-desktop {
+    text-align: center;
+
+    #dropdown__content-mobile {
+        width: initial;
+        background: #f6f6f6;
+        border-radius: 10px;
+    }
+}
+
+.menu {
+
+    #dropdown__content {
+        width: 220%;
+
+    }
+
+    a:not(a.menu__btn) {
+        &:hover {
+            color: $laranja !important;
+        }
+    }
 }

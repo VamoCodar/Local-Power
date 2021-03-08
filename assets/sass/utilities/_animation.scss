@@ -74,3 +74,13 @@ $ease-in-out-back: cubic-bezier(0.680, -0.550, 0.265, 1.550);
         opacity: 0;
     }
 }
+
+@keyframes bg-mobile {
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 100%;
+    }
+}

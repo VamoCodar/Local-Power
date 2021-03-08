@@ -1,0 +1,38 @@
+& {
+    height: calc(100vh - 100px);
+    position: relative;
+
+    span {
+        @include bg-props-cover;
+        @include size(100%);
+        display: block;
+        z-index: -1;
+        position: absolute;
+        filter: brightness(.8);
+
+    }
+
+    .text__container {
+        height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+
+        h1 {
+            @include texto__foto;
+            text-transform: uppercase;
+            font-family: $poppins;
+            font-size: clamp(24px, 4vw, 42px);
+            line-height: 150%;
+        }
+
+        a {
+            @include botao;
+        }
+
+    }
+}

@@ -16,11 +16,14 @@
 
 body {
   overflow-x: hidden;
-  height: 3000px;
-  /* TEMPORRARIO */
   font-family: $font;
+  @include scrollbars(8px, rgb(218, 218, 218));
 }
 
 .body__home {
   @import "../sass/pages/page__home";
+}
+
+.body__produto {
+  @import "../sass/pages/page__produto";
 }
