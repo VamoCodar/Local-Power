@@ -7,7 +7,7 @@
 @import "../sass/utilities/responsivo"; //  RESPONSIVO
 @import "../sass/utilities/reset"; // reset
 @import "../sass/utilities/animation"; // animation
-@import "../sass/utilities/assets__helper"; // animation
+@import "../sass/utilities/assets__helper";
 
 //COMPONENTS GERAIS
 @import "../sass/components/menu";
@@ -29,4 +29,8 @@ body {
 
 .body__empresa {
   @import "../sass/pages/page__empresa";
+}
+
+.body__franquias {
+  @import "../sass/pages/page__franquias";
 }

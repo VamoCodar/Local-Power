@@ -1,0 +1,121 @@
+.menu {
+    background: transparent;
+
+    #dropdown__content {
+        background: white;
+
+        a {
+            color: $preto;
+            font-weight: 400;
+            text-shadow: initial;
+            font-family: $poppins;
+        }
+    }
+}
+
+.menu__desktop {
+
+
+    .menu__links a:not(a.menu__btn) {
+        color: white;
+        letter-spacing: .5px;
+        font-size: 18px;
+
+
+        strong {
+            font-weight: 500;
+
+        }
+    }
+
+    .menu__links a:not(a.menu__btn, .atalhos a) {
+        text-shadow: 0px 2px 5px rgb(0 0 0 / 30%);
+    }
+
+    .menu__links li:first-child>a {
+        color: $laranja !important;
+    }
+}
+
+&.ativo__scroll {
+    .menu {
+        background: white !important;
+
+        .menu__links>li a:not(a.menu__btn) {
+            text-shadow: initial !important;
+            color: $preto !important;
+
+        }
+    }
+}
+
+.franquias {
+    position: relative;
+    height: 100vh;
+
+    &__img {
+        @include size(100%);
+        position: absolute;
+
+        span {
+            @include bg-props-cover;
+            background-image: url(../img/empresa.jpg);
+            @include size(100%);
+            position: absolute;
+            object-fit: cover;
+            filter: grayscale(.6);
+            z-index: -1;
+
+            @include d(m) {
+                background-image: url(../img/empresa-mobile.jpg);
+
+            }
+        }
+    }
+
+    .franquias__text {
+        z-index: 2;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: $cinza-escuro;
+        font-weight: 300;
+        font-family: $font;
+
+        h1 {
+            color: $cinza-escuro;
+            font-size: clamp(28px, 5vw, 42px);
+            text-shadow: 0px 2px 5px rgb(0 0 0 / 30%);
+            line-height: 140%;
+            z-index: 2;
+
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 170%;
+            font-family: $poppins;
+            text-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+            margin-top: 40px;
+            z-index: 2;
+
+            @include d(s) {
+                font-size: 16px;
+                margin-top: 20px;
+
+            }
+
+        }
+
+    }
+}
+
+.quebra {
+    @import "../components/quebra";
+
+    span {
+        background-image: url("../img/intro-home.jpg");
+
+    }
+}
