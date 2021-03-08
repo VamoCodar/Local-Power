@@ -683,6 +683,10 @@ a.menu__btn:hover {
 
             a:not(a.menu__btn) {
                 color: $preto !important;
+                strong {
+                    font-weight: 500;
+        
+                }
             }
         }
     }

@@ -1,5 +1,4 @@
 @import "../sass/utilities/fonts"; //Fonts
-
 @import "../sass/variaves__mixins"; //VARIAVEIS E MIXINS
 @import "bootstrap__imports"; //BOOTSTRAP
 
@@ -26,4 +25,8 @@ body {
 
 .body__produto {
   @import "../sass/pages/page__produto";
+}
+
+.body__empresa {
+  @import "../sass/pages/page__empresa";
 }
