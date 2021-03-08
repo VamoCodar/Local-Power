@@ -244,6 +244,19 @@
         right: 33vw;
         top: 300px;
     }
+
+    .btn__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        margin-top: 60px;
+
+        a {
+            @include botao;
+            margin: 0 auto;
+        }
+    }""
 }
 
 .clientes {
