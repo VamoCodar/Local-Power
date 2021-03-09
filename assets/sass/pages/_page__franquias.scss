@@ -54,6 +54,24 @@
     width: 100%;
     position: relative;
 
+    .container {
+        @include d(s) {
+            padding: 0;
+        }
+    }
+
+    @include d(m) {
+        height: 100%;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    &__contact {
+        @include d(m) {
+            max-width: 450px;
+        }
+    }
+
     &:before {
         @include bg-props-cover;
         content: "";
@@ -71,7 +89,6 @@
         }
     }
 
-
     &__wrapper {
         height: 100vh;
         display: flex;
@@ -84,11 +101,35 @@
     &__text {
         color: white;
 
+        & .subtitulo {
+            margin: 20px 0;
+            
+            @include d(m) {
+                padding-bottom: 30px;
+            }
+        }
+
+        @include d(m) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include d(s) {
+            padding: 0 15px;
+        }
+
         h1,
         p {
             max-width: 570px;
 
             @include text-shadow;
+
+            @include d(m) {
+                text-align: center;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
 
             strong {
                 font-weight: 600;   
@@ -100,11 +141,9 @@
         font-size: clamp(24px, 3vw, 36px);  // COMM Alterei os valores para parecer mais com o modelo
         font-weight: 600; // COMM Aqui também, 700 pareceu muito
         line-height: 140%;
-
     }
 
     p {
-        margin-top: 40px;
         font-size: 18px;
         line-height: 180%;
         font-weight: 500;
@@ -112,9 +151,10 @@
         letter-spacing: .5px;
 
         @include d(m) {
-            font-size: 16px;
+            font-size: 14px;
+            line-height: 140%;
+            margin: 10px 0;
         }
-
     }
 
     &__contact {
@@ -126,10 +166,18 @@
         }
         h3 {
             font-weight: 600;
+
+            @include d(s) {
+                font-size: 22px;
+            }
         }
         p {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 300;
+            
+            @include d(s) {
+                font-size: 12px;
+            }
         }
 
         .franquias-bg{
@@ -147,6 +195,11 @@
             background-repeat: no-repeat;
             background-size: cover;
             backdrop-filter: blur(15px);
+
+            @include d(s) {
+                border-radius: 0;
+                backdrop-filter: blur(5px);
+            }
         }
         .franquia-card{
             padding: 8px 16px;
@@ -158,6 +211,7 @@
             justify-content: center;
             @include d(m){
                 padding: 0;
+                gap: 10px;
             }  
         }
         form > input, form > div{
@@ -173,7 +227,7 @@
                 color: white;
             }
             @include d(m){
-                width: 40%;
+                width: 100%;
                 margin-left: 5px;
                 margin-right: 5px;
 
