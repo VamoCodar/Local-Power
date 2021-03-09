@@ -56,6 +56,11 @@
         margin: 0 auto;
         height: 100%;
 
+        @include d(m) {
+            padding-bottom: 20px;
+
+        }
+
         @include d(s) {
             padding-top: 30px;
         }
