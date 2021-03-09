@@ -76,6 +76,10 @@
         height: 100vh;
         display: flex;
         align-items: center;
+        @include d(m) {
+            height: 100%;
+            flex-direction: column;
+        }
     }
     &__text {
         color: white;
