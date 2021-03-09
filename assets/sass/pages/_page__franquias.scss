@@ -267,6 +267,45 @@
     }
 }
 
+.porque {
+    padding: 60px 0;
+
+    .porque__titulo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        @import "../components/h1__centralizado";
+        font-size: clamp(24px, 2.5vw, 32px) !important;
+        max-width: 520px;
+        line-height: 150%;
+
+        span {
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background: $laranja;
+                width: 140px;
+                height: 3px;
+                display: block;
+                bottom: initial;
+                top: 42px;
+                left: 50px;
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+
+    }
+}
+
 .quebra {
     @import "../components/quebra";
 
