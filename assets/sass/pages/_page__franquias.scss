@@ -62,12 +62,12 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: url("/assets/img/franquias-hero.jpg");
+        background-image: url("../img/franquias-hero.jpg");
         filter: brightness(.4); // COMM Menos brilho
         z-index: -1;
 
         @include d(s) {
-            background-image: url("/assets/img/franquias-hero.jpg");
+            background-image: url("../img/franquias-hero.jpg");
         }
     }
 
@@ -142,7 +142,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            // filter: blur(8px);
+            backdrop-filter: blur(15px);
         }
         .franquia-card{
             padding: 8px 16px;
