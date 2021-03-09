@@ -171,9 +171,12 @@
         p {
             font-size: 14px;
             font-weight: 300;
+            max-width: 460px;
+            margin: 0 auto;
             
             @include d(s) {
                 font-size: 12px;
+                margin: 15px auto;
             }
         }
 
@@ -263,12 +266,154 @@
             margin-right: 40px;
             margin-top: 12px;
             margin-bottom: 12px;
+
+            @include d(m) {
+                margin-right: auto;
+                margin-bottom: 24px;
+            }
         }
     }
 }
 
 .porque {
     padding: 60px 0;
+
+    &__wrapper {
+        
+        .porque__item {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            padding-bottom: 15px; // COMM GAP entre os itens
+
+            img {
+                max-height: 150px;
+                object-fit: contain;
+            }
+        }
+
+        .porque__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 150px;
+            padding-left: 20px;
+
+            h4 {
+                margin: 0px;
+                font-size: 20px;
+                font-weight: 600;
+
+                @include d(m) {
+                    font-size: clamp(16px, 1.2vw, 18px);
+                }
+            }
+            p {
+                font-size: 16px;
+                padding-left: 10px; 
+
+                @include d(m) {
+                    font-size: clamp(12px, .8vw, 16px);;
+                }
+            }
+        }
+
+        .section__1{
+            grid-column: 1 / 12;
+
+            img {
+                grid-column: 1 / 9;
+            }
+
+            .porque__description {
+                grid-column: 9 / 13;
+            }
+        }
+
+        .section__2{
+            grid-column: 1 / 12;
+
+            img {
+                grid-column: 1 / 8;
+            }
+
+            .porque__description {
+                grid-column: 8 / 12;
+            }
+        }
+
+        .section__3{
+            grid-column: 1 / 12;
+
+            img {
+                grid-column: 1 / 7;
+            }
+
+            .porque__description {
+                grid-column: 7 / 11;
+            }
+        }
+
+        .section__4{
+            grid-column: 1 / 12;
+
+            img {
+                grid-column: 1 / 6;
+            }
+
+            .porque__description {
+                grid-column: 6 / 10;
+            }
+        }
+
+        .section__5{
+            grid-column: 1 / 12;
+
+            img {
+                grid-column: 1 / 5;
+            }
+
+            .porque__description {
+                grid-column: 5 / 9;
+            }
+        }
+        
+        @include d(s) {
+
+            .section__1, .section__2, .section__3, .section__4, .section__5 {
+                display: flex;    
+                width: 100%; 
+                overflow: hidden; 
+                
+                img {
+                    display: flex;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    object-fit: cover;
+                    height: 100px;
+                    overflow: hidden;
+                    z-index: -1;
+                    backdrop-filter: blur(15px);
+                    opacity: 0.2;
+                }
+                .porque__description {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 90%;
+                    padding: 10px 12px;
+                    margin: 0;
+                    position: absolute;
+                    text-align: center;
+
+                    p {
+                        padding: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+
+    }
 
     .porque__titulo {
         width: 100%;
@@ -278,24 +423,33 @@
 
     h1 {
         @import "../components/h1__centralizado";
-        font-size: clamp(24px, 2.5vw, 32px) !important;
+        display: inline !important;
+        font-size: 32px !important;
         max-width: 520px;
         line-height: 150%;
 
+        @include d(s) {
+            font-size: 26px !important;
+        }
+
         span {
             position: relative;
-            display: inline-block;
 
             &::after {
                 content: "";
                 position: absolute;
-                background: $laranja;
-                width: 140px;
+                background: #f16522;
+                width: 135px;
                 height: 3px;
                 display: block;
                 bottom: initial;
                 top: 42px;
-                left: 50px;
+                left: 0;
+
+                @include d(s) {
+                    width: 110px;
+                    top: 34px;
+                }
             }
         }
 
