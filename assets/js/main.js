@@ -2,7 +2,9 @@
 const pageHome = document.querySelector("#page__home")
 const pageProdutoSolar = document.querySelector("#page__produto-solar")
 const pageEmpresa = document.querySelector("#page__empresa")
+const pageFranquias = document.querySelector("#page__franquias")
 const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
+
 
 
 function escopoPages() {
@@ -26,6 +28,13 @@ function escopoPages() {
     //page EMPRESA ====================
     else if (pageEmpresa) {
         document.body.classList.add("body__empresa")
+        // 
+    }
+
+     //page FRANQUIAS ====================
+     else if (pageFranquias) {
+        document.body.classList.add("body__franquias")
+
         // 
     }
 
