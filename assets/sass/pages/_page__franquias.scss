@@ -207,7 +207,7 @@
         form{
             display: flex;
             flex-wrap: wrap;
-            padding: 6px 12px;
+            padding: 6px 0;
             justify-content: center;
 
             @include d(m){
@@ -311,15 +311,28 @@
                 @include d(m) {
                     font-size: clamp(16px, 1.2vw, 18px);
                 }
+
+                @include d(m) {
+                    font-size: 18px;
+                }
             }
             p {
                 font-size: 16px;
-                padding-left: 10px; 
+                padding-top: 10px; 
 
                 @include d(m) {
-                    font-size: clamp(12px, .8vw, 16px);;
+                    font-size: clamp(12px, .8vw, 16px);
+                }
+
+                @include d(s) {
+                    font-weight: 500;
                 }
             }
+
+            @include d(s) {
+                justify-content: center;
+            }
+
         }
 
         .section__1{
@@ -406,7 +419,7 @@
                     overflow: hidden;
                     width: 100%;
                     filter: blur(.8px);
-                    opacity: 0.2;
+                    opacity: 0.15;
                 }
                 .porque__description {
                     display: flex;
@@ -500,7 +513,7 @@
     @import "../components/full__projetos";
 
     .img__container {
-        @include d(m) {
+        @include d(s) {
             order: -1;
             height: 200px;
         }
@@ -524,8 +537,6 @@
         margin-top: 40px;
     }
 
-
-
     .text__container {
         width: 100%;
         display: flex;
@@ -533,11 +544,8 @@
 
         h1 {
             @import "../components/h1__centralizado";
-            @include d(s){
-                zoom: .8;
-            }
-            @include d(ss){
-                zoom: .7;
+            @include d(s) {
+                font-size: 26px;
             }
         }
     }
@@ -586,11 +594,16 @@
             margin: 20px auto;
             object-fit: contain;
 
+            @include d(s) {
+                margin: 10px auto;
+            }
+
         }
 
         p {
             font-family: $poppins;
             text-align: center;
+            font-weight: 500;
         }
     }
 
@@ -609,6 +622,7 @@
 }
 
 .materias {
+    padding: 80px 0;
 
     .text__container {
         width: 100%;
@@ -617,11 +631,14 @@
 
         h1 {
             @import "../components/h1__centralizado";
+
+            @include d(s) {
+                font-size: 26px;
+            }
         }
     }
 
     &__wrapper {
-        min-height: 650px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -631,6 +648,11 @@
             display: block;
             margin: 0 auto;
             max-width: 250px;
+
+            @include d(s) {
+                max-width: 200px;
+                padding: 30px 0;
+            }
         }
 
         @include d(m) {
@@ -640,11 +662,16 @@
     }
 
     .botao {
+        padding-top: 60px;
         display: block;
         margin: 0 auto;
         
         a {
             @include botao;
+        }
+
+        @include d(s) {
+            padding-top: 40px;
         }
     }
 }
