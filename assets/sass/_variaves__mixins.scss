@@ -41,6 +41,9 @@ sans-serif;
     &:hover {
         background-color: #d64400;
     }
+    @include d(s){
+        font-size: 14px;
+    }
 
 }
 

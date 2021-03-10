@@ -35,4 +35,34 @@
         }
 
     }
+    height: clamp(620px, 100vh, 700px) !important;
+
+    .img__fundo {
+        background-attachment: fixed;
+    }
+
+    @include d(m) {
+        height: 400px !important;
+
+        .text__container {
+            height: 400px !important;
+
+        }
+    }
+
+    @include d(m) {
+        h1 {
+            font-size: 20px !important;
+            line-height: 150%;
+            text-align: start;
+            align-self: flex-start;
+            max-width: 500px;
+        }
+    }
+
+    span {
+        background-image: url("../img/intro-home.jpg");
+        filter: brightness(0.5);
+
+    }
 }

@@ -5,9 +5,15 @@
 // UTILITIES
 @import "../sass/utilities/geral"; //utilitarios
 @import "../sass/utilities/responsivo"; //  RESPONSIVO
+
 @import "../sass/utilities/reset"; // reset
 @import "../sass/utilities/animation"; // animation
 @import "../sass/utilities/assets__helper";
+
+@import "../sass/utilities/reset"; // Reset
+@import "../sass/utilities/animation"; // Animation
+@import "../sass/utilities/assets__helper"; // Assets Helper
+
 
 //COMPONENTS GERAIS
 @import "../sass/components/menu";
@@ -23,14 +29,19 @@ body {
   @import "../sass/pages/page__home";
 }
 
-.body__produto {
-  @import "../sass/pages/page__produto";
-}
-
 .body__empresa {
   @import "../sass/pages/page__empresa";
 }
 
 .body__franquias {
   @import "../sass/pages/page__franquias";
+
+// produtos ===
+.body__produto-solar {
+  @import "../sass/pages/page__produto-solar";
+}
+
+.body__produto-assistencia {
+  @import "../sass/pages/page__produto-assistencia";
+
 }
