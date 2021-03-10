@@ -71,6 +71,9 @@
 
         h1 {
             @import "../components/h1__centralizado";
+            @include d(ss){
+                zoom: .8;
+            }
         }
     }
 
@@ -175,6 +178,9 @@
         h1 {
             @import "../components/h1__centralizado";
 
+            @include d(s) {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -363,11 +369,11 @@
     }
 
     @include d(m) {
-        height: 400px  !important;
+        height: 400px !important;
 
         .text__container {
-            height: 400px  !important;
-           
+            height: 400px !important;
+
         }
     }
 
