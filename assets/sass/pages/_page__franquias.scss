@@ -277,7 +277,7 @@
 
 .porque {
     padding: 60px 0;
-    background-color: #e5e5e5;
+    background-color: $branco-claro;
 
     &__wrapper {
 
@@ -473,33 +473,217 @@
     }
 }
 
-.modelo__titulo{
-    padding-top: 60px;
-    justify-content: center;
+#modelo {
+    .modelo__titulo{
+        padding-top: 60px;
+        justify-content: center;
 
-    h1 {
-        font-family: $poppins;
-        text-align: center;
-        margin-bottom: 60px;
+        h1 {
+            @import "../components/h1__centralizado";
+            display: block !important;
+            margin: 0 auto;
+            text-align: center;
+
+            @include d(m) {
+                font-size: 28px;
+            }
+        }
     }
-}
 
-
-.modelo {
-    @import "../components/full__projetos";
+    .modelo{
+        @import "../components/full__projetos";
+    }
 
 }
 
 .store {
     @import "../components/full__projetos";
 
+    .img__container {
+        @include d(m) {
+            order: -1;
+            height: 200px;
+        }
+    }
+
 }
 
-.modelo, .store {
+.modelo, .store {                   // COMM BOTÃO DA SECTION
      .titulo__secundario a {
-        padding: 12px 15px;
+        padding: 12px 15px !important;
     }
 }
+
+
+.passos {
+    padding-top: 80px;
+    background: $branco-claro;
+    padding-bottom: 60px;
+
+    @include d(s) {
+        margin-top: 40px;
+    }
+
+
+
+    .text__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        h1 {
+            @import "../components/h1__centralizado";
+            @include d(s){
+                zoom: .8;
+            }
+            @include d(ss){
+                zoom: .7;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 60px;
+
+        &-row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 20px;
+            gap: 60px;
+
+            @include d(s) {
+                flex-wrap: wrap;
+                gap: 40px;
+
+
+            }
+
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        @include d(m) {
+            max-width: 300px;
+        }
+
+        >span {
+            font-size: 28px;
+            font-family: $poppins;
+            font-weight: 600;
+            color: $laranja;
+
+        }
+
+        img {
+            max-width: 80px;
+            height: 80px;
+            margin: 20px auto;
+            object-fit: contain;
+
+        }
+
+        p {
+            font-family: $poppins;
+            text-align: center;
+        }
+    }
+
+    .btn__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        margin-top: 60px;
+
+        a {
+            @include botao;
+            margin: 0 auto;
+        }
+    }
+}
+
+.materias {
+
+    .text__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        h1 {
+            @import "../components/h1__centralizado";
+        }
+    }
+
+    &__wrapper {
+        min-height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .materiais_images img{
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 250px;
+        }
+
+        @include d(m) {
+            height: 100%;
+            flex-direction: column;
+        }
+    }
+
+    .botao {
+        display: block;
+        margin: 0 auto;
+        
+        a {
+            @include botao;
+        }
+    }
+}
+
+.nosso__time {
+    
+    @import "../components/quebra";
+    height: clamp(620px, 100vh, 700px) !important;
+
+    .img__fundo {
+        background-attachment: fixed;
+    }
+
+    @include d(m) {
+        height: 400px !important;
+
+        .text__container {
+            height: 400px !important;
+
+        }
+    }
+
+    @include d(m) {
+        h1 {
+            font-size: 20px !important;
+            line-height: 150%;
+            text-align: start;
+            align-self: flex-start;
+            max-width: 500px;
+        }
+    }
+
+    span {
+        background-image: url("../img/intro-home.jpg");
+        filter: brightness(0.5);
+
+    }
+}
+
 
 .quebra {
     @import "../components/quebra";
