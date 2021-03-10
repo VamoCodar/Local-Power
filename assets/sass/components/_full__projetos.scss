@@ -1,5 +1,5 @@
 & {
-    height: 100vh;
+    height: clamp(620px, 100vh, 920px);
 
     @include d(s) {
         height: 100%;
@@ -16,7 +16,8 @@
 
     .img__container {
         position: relative;
-        height: 100vh;
+        height: clamp(620px, 100vh, 920px);
+
 
         @include d(s) {
             height: 300px;
@@ -110,4 +111,5 @@
 
         }
     }
+    
 }

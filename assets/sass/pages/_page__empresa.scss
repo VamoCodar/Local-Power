@@ -55,7 +55,7 @@
 
 .intro {
     position: relative;
-    height: 100vh;
+    height: clamp(620px, 100vh, 920px);
 
     &__img {
         @include size(100%);
@@ -79,7 +79,8 @@
 
     .intro__text {
         z-index: 2;
-        height: 100vh;
+        height: clamp(620px, 100vh, 920px);
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -116,6 +117,8 @@
 }
 
 .visao {
+    padding-bottom: 60px;
+
     &__wrapper {
         display: flex;
         gap: 20px;
@@ -141,6 +144,11 @@
         background-image: url(../img/missao.jpg);
         font-family: $poppins;
         min-width: 280px;
+
+        @include d(m) {
+            height: 490px;
+        }
+
         h2 {
             color: $preto;
             text-align: center;
@@ -214,6 +222,100 @@
                 height: 170px;
                 width: 1px;
             }
+        }
+    }
+
+    &__quebra {
+        text-align: center;
+        line-height: 170%;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $poppins;
+        margin: 30px auto;
+
+        @include d(s) {
+            font-size: 14px;
+            text-align: start;
+
+        }
+    }
+
+    .btn__container {
+        display: flex;
+        justify-content: center;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.oferecemos {
+    padding-bottom: 100px;
+    padding-top: 80px;
+
+    @include d(s) {
+        padding-top: 40px;
+    }
+
+    img {
+        margin: 20px auto;
+        max-width: 700px;
+
+        @include d(m) {
+            max-width: 100%;
+        }
+    }
+
+    h1 {
+        @import "../components/h1__centralizado";
+        margin: 0 auto;
+        display: block !important;
+        margin-bottom: 40px !important;
+
+        @include d(s) {
+            zoom: .7;
+        }
+    }
+
+    p {
+        text-align: center;
+        line-height: 170%;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $poppins;
+        margin: 0px auto 60px;
+
+        @include d(s) {
+            font-size: 14px;
+            text-align: start;
+
+        }
+    }
+
+    &__img {
+        span {
+            @include bg-props-contain;
+            background-image: url(../img/funciona.png);
+            display: block;
+            @include size(100%);
+            height: 500px;
+
+            @include d(s) {
+                background-image: url(../img/funciona-mobile.jpg);
+                height: 220px;
+
+            }
+        }
+    }
+
+    .btn__container {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+
+        a {
+            @include botao;
         }
     }
 }

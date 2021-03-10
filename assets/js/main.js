@@ -1,7 +1,8 @@
 //  PAGES
 const pageHome = document.querySelector("#page__home")
-const pageProduto = document.querySelector("#page__produto")
+const pageProdutoSolar = document.querySelector("#page__produto-solar")
 const pageEmpresa = document.querySelector("#page__empresa")
+const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
 
 
 function escopoPages() {
@@ -9,20 +10,22 @@ function escopoPages() {
     //page HOME ========================
     if (pageHome) {
         document.body.classList.add("body__home")
-
         // 
     }
 
-    //page PRODUTO ====================
-    else if (pageProduto) {
-        document.body.classList.add("body__produto")
-
+    //page PRODUTO SOLAR ====================
+    else if (pageProdutoSolar) {
+        document.body.classList.add("body__produto-solar")
+        // 
+    }
+    //page PRODUTO ASSISTENCIA ====================
+    else if (pageProdutoAssistencia) {
+        document.body.classList.add("body__produto-assistencia")
         // 
     }
     //page EMPRESA ====================
     else if (pageEmpresa) {
         document.body.classList.add("body__empresa")
-
         // 
     }
 
