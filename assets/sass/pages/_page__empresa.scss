@@ -49,9 +49,13 @@
     }
 }
 
+.container {
+    max-width: 1280px;
+}
+
 .intro {
     position: relative;
-    height: 100vh;
+    height: clamp(620px, 100vh, 920px);
 
     &__img {
         @include size(100%);
@@ -63,7 +67,7 @@
             @include size(100%);
             position: absolute;
             object-fit: cover;
-            filter: grayscale(.6);
+            filter: grayscale(.7);
             z-index: -1;
 
             @include d(m) {
@@ -75,7 +79,8 @@
 
     .intro__text {
         z-index: 2;
-        height: 100vh;
+        height: clamp(620px, 100vh, 920px);
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -110,6 +115,214 @@
 
     }
 }
+
+.visao {
+    padding-bottom: 60px;
+
+    &__wrapper {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        @include d(m) {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            @include scrollbars(6px, $laranja, $branco-claro)
+        }
+
+
+    }
+
+    &__item {
+        width: 35%;
+        height: 550px;
+        padding: 40px 10px;
+        @include bg-props-cover;
+        background-image: url(../img/missao.jpg);
+        font-family: $poppins;
+        min-width: 280px;
+
+        @include d(m) {
+            height: 490px;
+        }
+
+        h2 {
+            color: $preto;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 1px;
+                background: $preto;
+                height: 50px;
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+                bottom: -60px;
+            }
+        }
+
+        p {
+            max-width: 300px;
+            font-weight: 300;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            color: $preto;
+            font-weight: 400;
+        }
+    }
+
+    &__item:nth-child(1) {
+        background-image: url(../img/visao.jpg);
+
+        p {
+            margin-top: 80px;
+        }
+
+
+    }
+
+    &__item:nth-child(2) {
+        background-image: url(../img/visao.jpg);
+
+        p {
+            margin-top: 150px;
+        }
+
+        h2 {
+            &:after {
+                bottom: -130px;
+                height: 120px;
+                width: 1px;
+            }
+        }
+    }
+
+    &__item:nth-child(3) {
+        background-image: url(../img/valores.jpg);
+
+        p {
+            margin-top: 200px;
+        }
+
+        h2 {
+            &:after {
+                bottom: -180px;
+                height: 170px;
+                width: 1px;
+            }
+        }
+    }
+
+    &__quebra {
+        text-align: center;
+        line-height: 170%;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $poppins;
+        margin: 30px auto;
+
+        @include d(s) {
+            font-size: 14px;
+            text-align: start;
+
+        }
+    }
+
+    .btn__container {
+        display: flex;
+        justify-content: center;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.oferecemos {
+    padding-bottom: 100px;
+    padding-top: 80px;
+
+    @include d(s) {
+        padding-top: 40px;
+    }
+
+    img {
+        margin: 20px auto;
+        max-width: 700px;
+
+        @include d(m) {
+            max-width: 100%;
+        }
+    }
+
+    h1 {
+        @import "../components/h1__centralizado";
+        margin: 0 auto;
+        display: block !important;
+        margin-bottom: 40px !important;
+
+        @include d(s) {
+            zoom: .7;
+        }
+    }
+
+    p {
+        text-align: center;
+        line-height: 170%;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $poppins;
+        margin: 0px auto 60px;
+
+        @include d(s) {
+            font-size: 14px;
+            text-align: start;
+
+        }
+    }
+
+    &__img {
+        span {
+            @include bg-props-contain;
+            background-image: url(../img/funciona.png);
+            display: block;
+            @include size(100%);
+            height: 500px;
+
+            @include d(s) {
+                background-image: url(../img/funciona-mobile.jpg);
+                height: 220px;
+
+            }
+        }
+    }
+
+    .btn__container {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+
+
+
 
 .quebra {
     @import "../components/quebra";

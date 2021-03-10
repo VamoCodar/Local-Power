@@ -71,6 +71,12 @@
 
         h1 {
             @import "../components/h1__centralizado";
+            @include d(s){
+                zoom: .8;
+            }
+            @include d(ss){
+                zoom: .7;
+            }
         }
     }
 
@@ -175,6 +181,9 @@
         h1 {
             @import "../components/h1__centralizado";
 
+            @include d(s) {
+                margin-bottom: 30px;
+            }
         }
     }
 
@@ -186,10 +195,11 @@
         height: 360px;
 
         @include d(m) {
-            flex-direction: column;
             height: 100%;
             justify-content: center;
-
+            flex-wrap: wrap;
+            max-width: 390px;
+            margin: 0 auto;
         }
 
         p {
@@ -202,11 +212,22 @@
             font-size: clamp(12px, 1vw, 16px);
 
             @include d(m) {
-                position: static;
-                padding: 20px;
+                position: relative;
+                inset: 0;
                 font-size: 18px;
                 margin: 10px auto;
-                max-width: initial;
+                max-width: 150px;
+                padding: 20px 5px;
+                color: $preto;
+
+                &::before {
+                    content: "";
+                    @include size(65px);
+                    @include bg-props-contain;
+                    background-image: url("../img/como-5.png");
+                    display: block;
+                    margin: 0 auto 12px;
+                }
 
             }
         }
@@ -223,6 +244,12 @@
 
     &__p-1 {
         right: 81vw;
+
+        @include d(m) {
+            &:before {
+                background-image: url("../img/como-3.png") !important;
+            }
+        }
     }
 
     &__p-2 {
@@ -233,16 +260,40 @@
     &__p-3 {
         right: 58vw;
         top: 160px;
+
+        @include d(m) {
+            &:before {
+                background-image: url("../img/limpa.png") !important;
+                @include size(40px);
+
+            }
+        }
     }
 
     &__p-4 {
         right: 45vw;
         top: 230px;
+
+        @include d(m) {
+            &:before {
+                background-image: url("../img/empresa.png") !important;
+                @include size(40px);
+
+            }
+        }
     }
 
     &__p-5 {
         right: 33vw;
         top: 300px;
+
+        @include d(m) {
+            &:before {
+                background-image: url("../img/manutencao.png") !important;
+                @include size(40px);
+
+            }
+        }
     }
 
     .btn__container {
@@ -314,9 +365,34 @@
 
 .quebra {
     @import "../components/quebra";
+    height: clamp(620px, 100vh, 700px) !important;
+
+    .img__fundo {
+        background-attachment: fixed;
+    }
+
+    @include d(m) {
+        height: 400px !important;
+
+        .text__container {
+            height: 400px !important;
+
+        }
+    }
+
+    @include d(m) {
+        h1 {
+            font-size: 20px !important;
+            line-height: 150%;
+            text-align: start;
+            align-self: flex-start;
+            max-width: 500px;
+        }
+    }
 
     span {
         background-image: url("../img/intro-home.jpg");
+        filter: brightness(0.5);
 
     }
 }

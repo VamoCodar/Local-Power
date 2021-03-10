@@ -1,18 +1,18 @@
-
-
 @mixin flex ($justificado:space-between, $alinhamento:center, $flow:row wrap) {
   display: flex;
   flex-flow: $flow;
   justify-content: $justificado;
   align-items: $alinhamento;
 }
+
 //flexbox 
 
 // SCROLLBAR
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+
   // For Google Chrome
   &::-webkit-scrollbar {
-    width:  $size;
+    width: $size;
     height: $size;
   }
 
@@ -29,4 +29,22 @@
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
   }
+}
+
+//lihnas com box shadow
+// ex
+// box-shadow:
+//     linha-box-shadow(2, 2, 0, white),
+//     linha-box-shadow(3, 5, 0, $laranja),
+//     linha-box-shadow(8, 8, 0, white),
+//     linha-box-shadow(9, 11, 0, $laranja);
+
+@function linha-box-shadow ($min, $max, $y, $color) {
+  $value: '#{$min}px #{$y}px 0 #{$color}';
+
+  @for $i from $min through $max {
+    $value: '#{$value} , #{$i + 1}px #{$y}px 0 '+$color;
+  }
+
+  @return unquote($value);
 }
