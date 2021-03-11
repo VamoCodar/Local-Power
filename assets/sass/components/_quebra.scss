@@ -1,5 +1,6 @@
 & {
-    height: calc(100vh - 100px);
+    height: clamp(620px, 100vh, 820px);
+
     position: relative;
 
     span {
@@ -13,7 +14,8 @@
     }
 
     .text__container {
-        height: calc(100vh - 100px);
+        height: clamp(620px, 100vh, 920px);
+
         display: flex;
         flex-direction: column;
         gap: 60px;
@@ -35,7 +37,7 @@
         }
 
     }
-    height: clamp(620px, 100vh, 700px) !important;
+
 
     .img__fundo {
         background-attachment: fixed;

@@ -1,6 +1,7 @@
 // alterações do menu home
 .menu {
     background: transparent;
+    position: absolute;
 
     a:not(a.menu__btn) {
         color: white;
@@ -8,14 +9,17 @@
     }
 
     #dropdown__content {
+        background: white;
+
         a {
-            color: white;
-            font-weight: 600;
-            @include text-shadow;
+            color: black;
+            font-weight: 500;
 
         }
     }
 }
+
+
 
 &.ativo__scroll {
     .menu {
@@ -163,4 +167,88 @@
     //     padding-bottom: 200px;
     //     justify-content: flex-end;
     // }
+}
+
+
+// animation
+
+
+@keyframes titulosSobem {
+    0% {
+        transform: translateY(100px);
+        opacity: .2;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+
+    }
+}
+
+
+#fullpage {
+    will-change: transform;
+}
+
+.section {
+    h1 {
+        opacity: 1;
+        transition: all .5s ease 1s;
+        transform: translateY(0);
+        will-change: transform;
+
+    }
+
+    .animate__p {
+        opacity: 1;
+        transition: all .5s ease 1s;
+        transform: translateY(0);
+        will-change: transform;
+    }
+}
+
+.section.active {
+
+    h1,
+    .animate__p {
+        animation: titulosSobem 1s ease both;
+
+    }
+
+}
+
+&:not(.fp-viewing-0) {
+    .menu {
+        opacity: 0 !important;
+    }
+
+}
+
+&.fp-viewing-5 {
+    .menu {
+        opacity: 1 !important;
+        background: white !important;
+
+        a:not(a.menu__btn) {
+            color: $preto;
+
+            strong {
+                font-weight: 400;
+            }
+        }
+    }
+
+
+}
+
+&.no__animation .menu {
+    opacity: 1 !important;
+    position: fixed !important;
+}
+
+&:not(.no__animation footer) {
+    footer {
+        transform: translateY(300px);
+    }
 }

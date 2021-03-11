@@ -51,3 +51,9 @@ body {
   @import "../sass/pages/page__produto-residencial";
 
 }
+
+.body__produto-corporativo {
+  @import "../sass/pages/page__produto-residencial";
+  //pega mesmo estilo de residencial ☝🏽
+
+}
