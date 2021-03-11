@@ -159,7 +159,7 @@
 }
 
 .vantagens {
-    padding: 60px 0;
+    padding: 80px 0;
 
     .text__container {
         width: 100%;
@@ -213,12 +213,13 @@
                     }
                 }
                 p {
+                    text-align: center;
                     padding-top: 20px;
                     font-family: $poppins;
                     font-weight: 500;
 
                     @include d(s) {
-                        padding: 0 0 20px 0;
+                        padding: 0 0 40px 0;
                     }
                 }
 
@@ -238,9 +239,18 @@
             padding: 0;
         }
 
-        .btn__container a {
-            margin-top: 60px;
-            @include botao;
+        .btn__container {
+            display: flex;
+            justify-content: center;
+
+            a {
+                margin-top: 60px;
+                @include botao;
+
+                @include d(s) {
+                    margin-top: 20px;
+                }
+            }
         }
 
     }
