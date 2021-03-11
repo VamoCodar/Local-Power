@@ -36,6 +36,11 @@ body {
 .body__franquias {
   @import "../sass/pages/page__franquias";
 }
+
+.body__representantes {
+  @import "../sass/pages/page__representantes";
+}
+
 // produtos ===
 .body__produto-solar {
   @import "../sass/pages/page__produto-solar";
