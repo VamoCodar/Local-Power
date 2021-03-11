@@ -167,9 +167,21 @@
         justify-content: center;
     
         h1 {
-            @import "../components/h1__centralizado";
+            @include h1__centralizado();
+
+            span {
+                &:after {
+                    bottom: -2px;
+    
+                    @include d(m) {
+                        bottom: 2px;
+    
+                    }
+                }
+            }
+
             @include d(s) {
-                font-size: 26px;
+                padding-bottom: 40px;
             }
         }
     }
@@ -190,11 +202,24 @@
                     display: block;
                     margin: 0 auto;
                     object-fit: contain;
+
+                    @include d(m) {
+                        max-height: 120px;
+                    }
+
+                    @include d(s) {
+                        max-height: 80px;
+                        padding: 0;
+                    }
                 }
                 p {
                     padding-top: 20px;
                     font-family: $poppins;
                     font-weight: 500;
+
+                    @include d(s) {
+                        padding: 0 0 20px 0;
+                    }
                 }
 
                 @include d(m) {
@@ -232,6 +257,13 @@
     }
 
     @import "../components/passos";
+
+    &__item > span{
+        position: relative;
+        bottom: -25px;
+        right: -25px;
+
+    }
 
 }
 

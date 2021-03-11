@@ -4,7 +4,20 @@
     justify-content: center;
 
     h1 {
-        @import "../components/h1__centralizado";
+        
+        @include h1__centralizado();
+        
+        span {
+            &:after {
+                bottom: -2px;
+
+                @include d(m) {
+                    bottom: 2px;
+
+                }
+            }
+        }
+        
         @include d(s) {
             font-size: 26px;
         }
