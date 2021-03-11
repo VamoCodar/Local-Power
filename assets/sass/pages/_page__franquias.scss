@@ -172,6 +172,11 @@
             img {
                 max-height: 150px;
                 object-fit: contain;
+
+                @include d(m) {
+                    height: 120px;
+                    object-fit: cover;
+                }
             }
         }
 
@@ -204,7 +209,7 @@
                 padding-top: 10px; 
 
                 @include d(m) {
-                    font-size: clamp(12px, .8vw, 16px);
+                    font-size: clamp(12px, .7vw, 16px);
                 }
 
                 @include d(s) {
