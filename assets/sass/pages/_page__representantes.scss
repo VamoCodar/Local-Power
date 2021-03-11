@@ -167,7 +167,7 @@
         justify-content: center;
     
         h1 {
-            @include h1__centralizado();
+            @include h1__centralizado(34px, 26px);
 
             span {
                 &:after {
