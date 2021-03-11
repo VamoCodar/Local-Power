@@ -1,0 +1,160 @@
+@mixin como__funciona {
+    padding: 60px 0;
+
+    h1 {
+        @include h1__centralizado;
+        font-weight: 400;
+
+        @include d(m) {
+            margin-bottom: 30px;
+        }
+
+        @include d(s) {
+            margin-bottom: 50px;
+
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        @include d(m) {
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    &__img {
+        width: 60%;
+
+        @include d(m) {
+            width: 100%;
+
+        }
+
+        @include d(s) {
+            order: 2;
+        }
+
+        span {
+            @include bg-props-contain;
+            @include size(600px);
+            background-image: url("../img/como-2.jpg");
+            display: block;
+
+            @include d(m) {
+                @include size(100%);
+                height: 500px;
+            }
+
+            @include d(s) {
+                background-image: url("../img/como-2-mobile.jpg");
+
+            }
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        font-family: $poppins;
+
+
+        >div {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            img {
+                object-fit: contain;
+                @include size(80px);
+                margin: 0 auto;
+
+                @include d(s) {
+                    @include size(60px);
+
+                }
+            }
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 10px;
+                color: $preto;
+                position: relative;
+                display: inline-block;
+
+                @include d(s) {
+                    font-size: 18px;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    background: #e26d37;
+                    width: 100%;
+                    height: 3px;
+                    display: block;
+                    bottom: -3px;
+                    left: 0;
+
+                }
+
+            }
+
+            P {
+                color: rgb(37, 37, 37);
+                font-size: 14px;
+
+            }
+        }
+    }
+
+    &__items {
+        >div:nth-child(1) {
+            h2 {
+                &:after {
+                    background: #bde6ff;
+                }
+            }
+        }
+    }
+
+    &__items {
+        >div:nth-child(2) {
+            h2 {
+                &:after {
+                    background: #fde490;
+                }
+            }
+        }
+    }
+
+    &__items {
+        >div:nth-child(3) {
+            h2 {
+                &:after {
+                    background: #9ecf74;
+                }
+            }
+        }
+    }
+
+    .btn__container {
+        margin-top: 30px;
+        display: grid;
+        place-items: center;
+
+        @include d(m) {
+            margin-top: 60px;
+
+        }
+
+        a {
+            @include botao;
+        }
+    }
+}

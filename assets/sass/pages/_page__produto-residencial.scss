@@ -1,0 +1,230 @@
+.menu {
+
+    background: white !important;
+
+    a:not(a.menu__btn) {
+        color: $preto;
+
+        strong {
+            font-weight: 400;
+        }
+    }
+
+    #dropdown__content {
+        background: white;
+
+        a {
+            color: $preto;
+            font-weight: 400;
+            text-shadow: initial;
+        }
+
+    }
+
+}
+
+.residenciais {
+    @import "../components/full__projetos";
+    margin-top: 100px;
+
+    .img__container {
+        order: 2;
+    }
+}
+
+.atendimento {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    h1 {
+        max-width: 550px !important;
+        display: block !important;
+        margin: 0 auto;
+        width: initial !important;
+        line-height: 60px;
+
+
+        @include d(m) {
+            font-size: 28px;
+            line-height: 170%;
+
+        }
+
+        @include d(s) {
+            font-size: 22px;
+            max-width: 320px !important;
+
+        }
+
+        &:after {
+            display: none;
+        }
+
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background: #f16522;
+                width: 100%;
+
+                height: 3px;
+                display: block;
+                bottom: initial;
+                top: 45px;
+                left: 0;
+
+                @include d(m) {
+                    width: 100%;
+                    top: 30px;
+                }
+
+                @include d(s) {
+                    top: 24px;
+
+                }
+            }
+        }
+
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 70px;
+
+        @include d(m) {
+            flex-wrap: wrap;
+            margin-top: 30px;
+
+        }
+
+
+    }
+
+    &__item {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 350px;
+        min-width: 270px;
+
+        img {
+            @include size(60px);
+            margin-right: 20px;
+            object-fit: contain;
+        }
+
+        p {
+            font-family: $poppins;
+            line-height: 170%;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 20px;
+            text-align: center;
+
+            @include d(s) {
+                text-align: start;
+            }
+        }
+    }
+
+    .btn__container {
+
+        margin-top: 60px;
+        display: grid;
+        place-items: center;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.como {
+    @include como__funciona;
+}
+
+.garantia {
+    padding: 60px 0;
+    font-family: $poppins;
+    background: $branco-claro;
+
+    @include d(s) {
+        padding-top: 30px;
+    }
+
+    h1 {
+        @include h1__centralizado;
+        font-weight: 400;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: 100px;
+
+        @include d(m) {
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 30px;
+            margin-top: 50px;
+
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        img {
+            @include size(100px);
+            object-fit: contain;
+            margin-right: 20px;
+
+            @include d(m) {
+                @include size(80px);
+
+            }
+        }
+    }
+
+    .item__text {
+        h3 {
+            font-weight: 500;
+            color: $laranja;
+            font-size: 24px;
+
+            @include d(m) {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-weight: 500;
+
+            @include d(m) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .btn__container {
+        display: grid;
+        place-items: center;
+        margin-top: 100px;
+
+        @include d(m) {
+            margin-top: 60px;
+
+        }
+
+        a {
+            @include botao;
+        }
+    }
+}

@@ -186,7 +186,7 @@
                     background-image: url("../img/ornamento.png");
                     position: absolute;
                     bottom: -130px;
-                    left: 15px;
+                    left: 18px;
 
                     @include d(m) {
                         display: none;
@@ -265,6 +265,7 @@
 .selo {
 
     @import "../components/full__projetos";
+
     img {
         filter: brightness(1) !important;
 

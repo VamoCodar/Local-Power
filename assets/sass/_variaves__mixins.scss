@@ -13,6 +13,50 @@ sans-serif;
 
 
 // PROJETO ===================================================
+// @import "./components/h1__centralizado";
+@import "./components/como__funciona";
+
+
+@mixin h1__centralizado($xl:40px, $md:26px) {
+
+    font-family: $poppins;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: $xl;
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    margin: 0 auto;
+
+    @include d(s) {
+        font-size: $md;
+    }
+
+    @include d(ss) {
+        font-size: 22px;
+    }
+
+    span {
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            background: #e26d37;
+            width: 100%;
+            height: 3px;
+            display: block;
+            bottom: -3px;
+            left: 0;
+
+        }
+
+    }
+
+
+}
+
+
 @mixin text-shadow {
     text-shadow: 0px 2px 5px rgb(0 0 0 / 50%)
 }
@@ -41,7 +85,8 @@ sans-serif;
     &:hover {
         background-color: #d64400;
     }
-    @include d(s){
+
+    @include d(s) {
         font-size: 14px;
     }
 
