@@ -1,10 +1,11 @@
 .text__container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     h1 {
         @include h1__centralizado;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
 
         span {
             &:after {
@@ -16,6 +17,14 @@
                 }
             }
         }
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 60px;
+        font-size: clamp(16px, 1.6vw, 22px)
+        font-family: $poppins;
+
     }
 }
 
