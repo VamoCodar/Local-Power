@@ -158,246 +158,69 @@
 
 }
 
-.porque {
+.vantagens {
     padding: 60px 0;
-    background-color: $branco-claro;
 
-    &__wrapper {
-
-        .porque__item {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            padding-bottom: 15px; // COMM GAP entre os itens
-
-            img {
-                max-height: 150px;
-                object-fit: contain;
-            }
-        }
-
-        .porque__description {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-height: 150px;
-            padding-left: 20px;
-
-            h4, p {
-                font-family: $poppins;
-            }
-
-            h4 {
-                margin: 0px;
-                font-size: 20px;
-                font-weight: 600;
-
-                @include d(m) {
-                    font-size: clamp(16px, 1.2vw, 18px);
-                }
-
-                @include d(m) {
-                    font-size: 18px;
-                }
-            }
-            p {
-                font-size: 16px;
-                padding-top: 10px; 
-
-                @include d(m) {
-                    font-size: clamp(12px, .8vw, 16px);
-                }
-
-                @include d(s) {
-                    font-weight: 500;
-                }
-            }
-
-            @include d(s) {
-                justify-content: center;
-            }
-
-        }
-
-        .section__1{
-            grid-column: 1 / 12;
-
-            img {
-                grid-column: 1 / 9;
-            }
-
-            .porque__description {
-                grid-column: 9 / 13;
-            }
-        }
-
-        .section__2{
-            grid-column: 1 / 12;
-
-            img {
-                grid-column: 1 / 8;
-            }
-
-            .porque__description {
-                grid-column: 8 / 12;
-            }
-        }
-
-        .section__3{
-            grid-column: 1 / 12;
-
-            img {
-                grid-column: 1 / 7;
-            }
-
-            .porque__description {
-                grid-column: 7 / 11;
-            }
-        }
-
-        .section__4{
-            grid-column: 1 / 12;
-
-            img {
-                grid-column: 1 / 6;
-            }
-
-            .porque__description {
-                grid-column: 6 / 10;
-            }
-        }
-
-        .section__5{
-            grid-column: 1 / 12;
-
-            img {
-                grid-column: 1 / 5;
-            }
-
-            .porque__description {
-                grid-column: 5 / 9;
-            }
-        }
-
-        #porque__button {
-            @include botao;
-            display: block;
-            margin: 15px auto;
-            font-size: 18px;
-        }
-        
-        @include d(s) {
-
-            .section__1, .section__2, .section__3, .section__4, .section__5 {
-                display: flex;    
-                width: 100%; 
-                overflow: hidden; 
-                
-                img {
-                    display: flex;
-                    position: relative;
-                    top: 0;
-                    left: 0;
-                    object-fit: cover;
-                    height: 100px;
-                    overflow: hidden;
-                    width: 100%;
-                    filter: blur(.8px);
-                    opacity: 0.15;
-                }
-                .porque__description {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 90%;
-                    padding: 10px 12px;
-                    margin: 0;
-                    position: absolute;
-                    text-align: center;
-                    z-index: 1;
-
-                    p {
-                        padding: 10px 0 0 0;
-                    }
-                }
-            }
-        }
-
-    }
-
-    .porque__titulo {
+    .text__container {
         width: 100%;
         display: flex;
         justify-content: center;
+    
+        h1 {
+            @import "../components/h1__centralizado";
+            @include d(s) {
+                font-size: 26px;
+            }
+        }
     }
 
-    h1 {
-        @import "../components/h1__centralizado";
-        display: inline !important;
-        font-size: 32px !important;
-        max-width: 520px;
-        line-height: 150%;
+    &__wrapper {
+        width: 100%;
+        padding: 60px 0;
 
-        @include d(s) {
-            font-size: 26px !important;
-        }
+        &-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
 
-        span {
-            position: relative;
+            .vantagens__item{
+                img{
+                    max-height: 150px;
+                    padding: 10px 0;
+                    display: block;
+                    margin: 0 auto;
+                    object-fit: contain;
+                }
+                p {
+                    padding-top: 20px;
+                    font-family: $poppins;
+                    font-weight: 500;
+                }
 
-            &::after {
-                content: "";
-                position: absolute;
-                background: #f16522;
-                width: 135px;
-                height: 3px;
-                display: block;
-                bottom: initial;
-                top: 42px;
-                left: 0;
+                @include d(m) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
 
                 @include d(s) {
-                    width: 110px;
-                    top: 34px;
+                    flex: 0 0 100%;
+                    max-width: 100%;
                 }
             }
         }
 
-        &::after {
-            display: none;
+        @include d (s) {
+            padding: 0;
+        }
+
+        .btn__container a {
+            margin-top: 60px;
+            @include botao;
         }
 
     }
-}
-
-#modelo {
-    .modelo__titulo{
-        padding-top: 60px;
-        justify-content: center;
-
-        h1 {
-            @import "../components/h1__centralizado";
-            display: block !important;
-            margin: 0 auto;
-            text-align: center;
-
-            @include d(m) {
-                font-size: 28px;
-            }
-        }
-    }
-
-    .modelo{
-        @import "../components/full__projetos";
-    }
 
 }
-
-.modelo, .store {                   // COMM BOTÃO DA SECTION
-     .titulo__secundario a {
-        padding: 12px 15px !important;
-    }
-}
-
 
 .passos {
     padding-top: 80px;
