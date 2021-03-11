@@ -3,10 +3,13 @@ const pageHome = document.querySelector("#page__home")
 const pageProdutoSolar = document.querySelector("#page__produto-solar")
 const pageEmpresa = document.querySelector("#page__empresa")
 const pageFranquias = document.querySelector("#page__franquias")
+const pageRepresentantes = document.querySelector("#page__representantes")
+
 // produtos
 const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
 const pageProdutoResidencial = document.querySelector("#page__produto-residencial")
 const pageProdutoCorporativo = document.querySelector("#page__produto-corporativo")
+
 
 
 
@@ -49,6 +52,13 @@ function escopoPages() {
     //page PRODUTO CORPORATIVO ====================
     else if (pageProdutoCorporativo) {
         document.body.classList.add("body__produto-corporativo")
+        // 
+    }
+
+     //page REPRESENTANTES ====================
+     else if (pageRepresentantes) {
+        document.body.classList.add("body__representantes")
+
         // 
     }
 
