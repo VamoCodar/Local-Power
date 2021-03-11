@@ -16,7 +16,8 @@
 
     .img__container {
         position: relative;
-        height: clamp(620px, 100vh, 920px);
+        height: clamp(620px, 100vh, 1000px);
+
 
 
         @include d(s) {

@@ -194,7 +194,7 @@
 .section {
     h1 {
         opacity: 1;
-        transition: all .5s ease 1s;
+        transition: transform .5s ease 1s;
         transform: translateY(0);
         will-change: transform;
 
@@ -202,7 +202,7 @@
 
     .animate__p {
         opacity: 1;
-        transition: all .5s ease 1s;
+        transition: transform .5s ease 1s;
         transform: translateY(0);
         will-change: transform;
     }
