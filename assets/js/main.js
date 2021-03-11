@@ -3,8 +3,13 @@ const pageHome = document.querySelector("#page__home")
 const pageProdutoSolar = document.querySelector("#page__produto-solar")
 const pageEmpresa = document.querySelector("#page__empresa")
 const pageFranquias = document.querySelector("#page__franquias")
-const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
 const pageRepresentantes = document.querySelector("#page__representantes")
+
+// produtos
+const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
+const pageProdutoResidencial = document.querySelector("#page__produto-residencial")
+const pageProdutoCorporativo = document.querySelector("#page__produto-corporativo")
+
 
 
 
@@ -15,7 +20,20 @@ function escopoPages() {
         document.body.classList.add("body__home")
         // 
     }
+    //page EMPRESA ====================
+    else if (pageEmpresa) {
+        document.body.classList.add("body__empresa")
+        // 
+    }
 
+    //page FRANQUIAS ====================
+    else if (pageFranquias) {
+        document.body.classList.add("body__franquias")
+
+        // 
+    }
+
+    // PRODUTOS
     //page PRODUTO SOLAR ====================
     else if (pageProdutoSolar) {
         document.body.classList.add("body__produto-solar")
@@ -26,16 +44,14 @@ function escopoPages() {
         document.body.classList.add("body__produto-assistencia")
         // 
     }
-    //page EMPRESA ====================
-    else if (pageEmpresa) {
-        document.body.classList.add("body__empresa")
+    //page PRODUTO RESIDENCIAL ====================
+    else if (pageProdutoResidencial) {
+        document.body.classList.add("body__produto-residencial")
         // 
     }
-
-     //page FRANQUIAS ====================
-     else if (pageFranquias) {
-        document.body.classList.add("body__franquias")
-
+    //page PRODUTO CORPORATIVO ====================
+    else if (pageProdutoCorporativo) {
+        document.body.classList.add("body__produto-corporativo")
         // 
     }
 
@@ -72,7 +88,7 @@ menuPreenchido();
 
 /* abre & fecha menu  */
 const menuItem = document.querySelectorAll(".menu__icon-click")
-const linksMenu = document.querySelector(".atalhos")
+const linksMenu = document.querySelectorAll(".atalhos")
 const mediaQuery = window.matchMedia('(min-width: 992px)')
 
 function menuMobile() {
@@ -81,14 +97,16 @@ function menuMobile() {
 
     } else if (document.body.classList.contains("menu__open")) {
 
-        linksMenu.setAttribute(
-            "style",
-            "animation: voltaMenu 250ms both ease-out;"
-        );
-        setTimeout(() => {
-            linksMenu.removeAttribute("style", "animation");
-            document.body.classList.remove("menu__open");
-        }, 250);
+        linksMenu.forEach((i) => {
+            i.setAttribute(
+                "style",
+                "animation: voltaMenu 250ms both ease-out;"
+            );
+            setTimeout(() => {
+                i.removeAttribute("style", "animation");
+                document.body.classList.remove("menu__open");
+            }, 250);
+        })
     }
 }
 
@@ -96,15 +114,18 @@ function menuMobile() {
 /* FECHA MENU SE CLICAR PARTE PRETA */
 function fechaMenuMobile(click) {
     const partePreta = document.querySelector(".fundo__black")
-    if (document.body.classList.contains("menu__open") && click.target == partePreta) {
-        linksMenu.setAttribute(
-            "style",
-            "animation: voltaMenu 250ms both ease-out;"
-        );
-        setTimeout(() => {
-            linksMenu.removeAttribute("style", "animation");
-            document.body.classList.remove("menu__open");
-        }, 250);
+    if (document.body.classList.contains("menu__open") && click.target === partePreta) {
+
+        linksMenu.forEach((i) => {
+            i.setAttribute(
+                "style",
+                "animation: voltaMenu 250ms both ease-out;"
+            );
+            setTimeout(() => {
+                i.removeAttribute("style", "animation");
+                document.body.classList.remove("menu__open");
+            }, 250);
+        })
     }
 
 }

@@ -22,7 +22,8 @@
 body {
   overflow-x: hidden;
   font-family: $font;
-  @include scrollbars(8px, rgb(218, 218, 218));
+  @include scrollbars(8px, rgb(160, 160, 160));
+
 }
 
 .body__home {
@@ -48,5 +49,15 @@ body {
 
 .body__produto-assistencia {
   @import "../sass/pages/page__produto-assistencia";
+}
+
+.body__produto-residencial {
+  @import "../sass/pages/page__produto-residencial";
+
+}
+
+.body__produto-corporativo {
+  @import "../sass/pages/page__produto-residencial";
+  //pega mesmo estilo de residencial ☝🏽
 
 }

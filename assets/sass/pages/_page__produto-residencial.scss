@@ -1,0 +1,364 @@
+.menu {
+
+    background: white !important;
+
+    a:not(a.menu__btn) {
+        color: $preto;
+
+        strong {
+            font-weight: 400;
+        }
+    }
+
+    #dropdown__content {
+        background: white;
+
+        a {
+            color: $preto;
+            font-weight: 400;
+            text-shadow: initial;
+        }
+
+    }
+
+}
+
+.residenciais {
+    @import "../components/full__projetos";
+    margin-top: 100px;
+
+    .img__container {
+        order: 2;
+    }
+}
+
+.atendimento {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    h1 {
+        max-width: 430px !important;
+        display: block !important;
+        margin: 0 auto;
+        width: initial !important;
+        line-height: 60px;
+        font-family: 'Poppins';
+        font-weight: 400;
+
+        @include d(m) {
+            font-size: 28px;
+            line-height: 170%;
+
+        }
+
+        @include d(s) {
+            font-size: 22px;
+            max-width: 270px !important;
+
+        }
+
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background: #f16522;
+                width: 100%;
+
+                height: 3px;
+                display: block;
+                bottom: initial;
+                bottom: 4px;
+                left: 0;
+
+                @include d(m) {
+                    width: 100%;
+                    bottom: -2px;
+
+                }
+
+            }
+        }
+
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 70px;
+
+        @include d(m) {
+            flex-wrap: wrap;
+            margin-top: 30px;
+
+        }
+
+
+    }
+
+    &__item {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 350px;
+        min-width: 270px;
+
+        img {
+            @include size(60px);
+            margin-right: 20px;
+            object-fit: contain;
+        }
+
+        p {
+            font-family: $poppins;
+            line-height: 170%;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 20px;
+            text-align: center;
+
+            @include d(s) {
+                text-align: start;
+            }
+        }
+    }
+
+    .btn__container {
+
+        margin-top: 60px;
+        display: grid;
+        place-items: center;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.como {
+    @include como__funciona;
+}
+
+.garantia {
+    padding: 60px 0;
+    font-family: $poppins;
+    background: $branco-claro;
+
+    @include d(s) {
+        padding-top: 30px;
+    }
+
+    h1 {
+        @include h1__centralizado;
+        font-weight: 400;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: 100px;
+
+        @include d(m) {
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 30px;
+            margin-top: 50px;
+
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+
+        img {
+            @include size(100px);
+            object-fit: contain;
+            margin-right: 20px;
+
+            @include d(m) {
+                @include size(80px);
+
+            }
+        }
+    }
+
+    .item__text {
+        h3 {
+            font-weight: 500;
+            color: $laranja;
+            font-size: 24px;
+
+            @include d(m) {
+                font-size: 18px;
+            }
+        }
+
+        p {
+            font-weight: 500;
+
+            @include d(m) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .btn__container {
+        display: grid;
+        place-items: center;
+        margin-top: 100px;
+
+        @include d(m) {
+            margin-top: 60px;
+
+        }
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.quebra {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    span {
+        @include bg-props-cover;
+        background-attachment: fixed;
+        background-image: url("../img/quebra.jpg");
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(100%) brightness(.5);
+    }
+
+    img {
+        inset: 0;
+        position: absolute;
+        max-width: 420px;
+        margin: auto;
+
+        @include d(m) {
+            max-width: 280px;
+
+        }
+    }
+
+}
+
+.retorno {
+    padding: 60px 0;
+    padding-bottom: 100px;
+
+    h2 {
+        @include h1__centralizado($xl:28px);
+        text-align: start;
+        min-height: 46px;
+
+        @include d(m) {
+            text-align: center;
+        }
+
+        span {
+            &:after {
+                bottom: -2px;
+
+                @include d(m) {
+                    bottom: 2px;
+
+                }
+            }
+        }
+    }
+
+
+    &__wrapper {
+        display: flex;
+
+        @include d(m) {
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin: 50px auto;
+
+        @include d(m) {
+            margin: 30px auto;
+        }
+
+        img {
+            @include size(80px);
+            margin-right: 10px;
+            object-fit: contain;
+
+            @include d(s) {
+                @include size(60px);
+
+            }
+
+        }
+
+        p {
+            font-family: $poppins;
+            font-weight: 400;
+            font-size: 16px;
+
+            @include d(s) {
+                font-size: 14px;
+            }
+        }
+
+
+    }
+
+    .item__wrapper {
+        @include d(m) {
+            margin-top: 40px;
+        }
+    }
+
+    .item__img {
+        img {
+            border: 1px solid #e26d3764;
+            padding: 20px;
+            border-radius: 10px;
+            object-fit: contain;
+            min-height: 280px;
+
+            @include d(m) {
+                min-height: 200px;
+
+            }
+
+        }
+    }
+
+    .btn__container {
+
+        margin-top: 60px;
+        display: grid;
+        place-items: center;
+
+        a {
+            @include botao;
+        }
+    }
+}
+
+.quebra__2 {
+    @import "../components/quebra";
+}
