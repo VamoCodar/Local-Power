@@ -55,8 +55,8 @@ function escopoPages() {
         // 
     }
 
-     //page REPRESENTANTES ====================
-     else if (pageRepresentantes) {
+    //page REPRESENTANTES ====================
+    else if (pageRepresentantes) {
         document.body.classList.add("body__representantes")
 
         // 
@@ -133,6 +133,7 @@ function fechaMenuMobile(click) {
 
 // add classe DROP MOBILE 
 const dropMobile = document.querySelectorAll(".dropdown__menu")
+
 dropMobile.forEach((i) => {
     i.addEventListener("click", function (event) {
         event.preventDefault();
