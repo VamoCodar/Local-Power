@@ -1,0 +1,77 @@
+.menu {
+    background: transparent;
+
+    #dropdown__content {
+        background: white;
+
+        a {
+            color: $preto;
+            font-weight: 400;
+            text-shadow: initial;
+            font-family: $poppins;
+        }
+    }
+}
+
+.menu__desktop {
+
+
+    .menu__links a:not(a.menu__btn) {
+        color: white;
+        letter-spacing: .5px;
+        font-size: 18px;
+
+
+        strong {
+            font-weight: 500;
+
+        }
+    }
+
+    .menu__links a:not(a.menu__btn, .atalhos a) {
+        text-shadow: 0px 2px 5px rgb(0 0 0 / 30%);
+    }
+}
+
+&.ativo__scroll {
+    .menu {
+        background: white !important;
+
+        .menu__links>li a:not(a.menu__btn) {
+            text-shadow: initial !important;
+            color: $preto !important;
+
+        }
+    }
+}
+
+.container {
+    max-width: 1280px;
+}
+
+.contato {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+
+    &__contact {
+        @import "../components/contact";
+    }
+
+    &__wrapper {
+
+    }
+}
+
+.quebra {
+    @import "../components/quebra";
+
+    span {
+        background-image: url("../img/intro-home.jpg");
+
+    }
+}

@@ -42,6 +42,10 @@ body {
   @import "../sass/pages/page__representantes";
 }
 
+.body__contato {
+  @import "../sass/pages/page__contato";
+}
+
 // produtos ===
 .body__produto-solar {
   @import "../sass/pages/page__produto-solar";
