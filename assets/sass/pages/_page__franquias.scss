@@ -382,8 +382,23 @@
         }
     }
 
+    // .swiper-container {
+
+    //     .swiper-wrapper {
+    //         overflow: hidden;
+
+    //         .swiper-slide {
+    //             img {
+    //                 object-fit: contain;
+    //             }
+    //         }
+
+    //     }
+    // }
+
     .modelo {
         @import "../components/full__projetos";
+        overflow: hidden;
     }
 
 }
