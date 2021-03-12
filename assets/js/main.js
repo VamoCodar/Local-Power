@@ -1,6 +1,3 @@
-
-
-
 //  PAGES
 const pageHome = document.querySelector("#page__home")
 const pageProdutoSolar = document.querySelector("#page__produto-solar")
@@ -35,6 +32,24 @@ function escopoPages() {
     //page FRANQUIAS ====================
     else if (pageFranquias) {
         document.body.classList.add("body__franquias")
+        const props = {
+            loop: true,
+            effect: 'fade',
+
+            autoplay: {
+                delay: 1400,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+        }
+        var swiper = new Swiper(".swiper-container", props);
+
+
+
+
 
         // 
     }
@@ -149,7 +164,7 @@ function fechaMenuMobile(click) {
 
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("dcl")
     console.log("dom carregou");
 });
@@ -184,15 +199,3 @@ menuItem.forEach((i) => {
 })
 document.body.addEventListener("click", fechaMenuMobile)
 window.addEventListener("scroll", menuPreenchido);
-
-
-// Swiper JS
-const swiper = new Swiper('.swiper-container', {
-    direction: 'horizontal',
-    loop: true,
-    effect: 'fade',
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: true,
-    }
-});

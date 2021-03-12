@@ -386,7 +386,7 @@
         @import "../components/full__projetos";
         overflow: hidden;
 
-        &__wrapper{
+        &__wrapper {
             height: clamp(620px, 100vh, 1000px);
         }
     }
@@ -395,11 +395,12 @@
         overflow: hidden;
 
         .swiper-slide {
-            & > img {
+            &>img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
+
             @include d(s) {
                 height: 230px;
             }
@@ -446,7 +447,7 @@
         padding-bottom: 40px;
 
         span {
-            &:after {   
+            &:after {
                 bottom: 3px !important;
             }
         }
@@ -504,7 +505,19 @@
     }
 }
 
+.swiper-pagination {
+    bottom: 80px !important;
 
+    @include d(s){
+        bottom: 5px !important;
+    }
+    .swiper-pagination-bullet{
+        background: white;
+    }
+    .swiper-pagination-bullet-active {
+        background: $laranja;
+    }
+}
 
 //animation
 .js__scroll {
