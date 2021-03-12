@@ -25,9 +25,9 @@
                             <p>Preencha os campos abaixo e nossa área de Atendimento entrará em contato.</p>
                             <form action="">
                                 <div class="col-md-8   inputs__group">
-                                    <input id="name" type="text" value="" placeholder="Nome *">
-                                    <input id="sobrenome" type="text" value="" placeholder="Sobrenome *">
-                                    <input id="email" type="email" value="" placeholder="E-mail *">
+                                    <input id="name" type="text" value="" placeholder="Nome *"  required>
+                                    <input id="sobrenome" type="text" value="" placeholder="Sobrenome *"  required>
+                                    <input id="email" type="email" value="" placeholder="E-mail *"  required>
                                     <div class="select__wrapper">
                                         <select name="conta" id="conta">
                                             <option value="0">Assunto*</option>
@@ -37,10 +37,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-4  col-md-8"><textarea placeholder="Descrição" name="" id=""
-                                        cols="30" rows="10"></textarea></div>
+                                <div class="col-lg-4  col-md-8"><textarea placeholder="Descrição*" name="" id=""
+                                        cols="30" rows="10" required></textarea></div>
                                 <div class="button__container col-12 mx-auto">
-                                    <button id="submit" type="submit">Submeter</button>
+                                    <button id="submit" type="submit">Enviar</button>
 
                                 </div>
                             </form>
