@@ -422,17 +422,12 @@
     @import "../components/passos";
 
     h1 {
-        @include h1__centralizado();
+        @include h1__centralizado;
         padding-bottom: 40px;
 
         span {
             &:after {
-                bottom: -2px;
-
-                @include d(m) {
-                    bottom: 2px;
-
-                }
+                bottom: 3px !important;
             }
         }
     }
