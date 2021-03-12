@@ -46,13 +46,19 @@
 }
 
 main {
+    position: relative;
     @include img__full__after("../img/fale-bg.jpg");
+
+    @include d(m) {
+        overflow: hidden;
+        padding-bottom: 60px;
+    }
 
     &:after {
         z-index: -10;
 
         @include d(m) {
-            height: 200%;
+            height: 150%;
         }
     }
 }
