@@ -45,26 +45,77 @@
     }
 }
 
+main {
+    @include img__full__after("../img/fale-bg.jpg");
+
+    &:after {
+        z-index: -10;
+
+        @include d(m) {
+            height: 200%;
+        }
+    }
+}
+
 .container {
     max-width: 1280px;
 }
 
+.contato__blur {
+    @include bg__blur(5px);
+    z-index: -1;
+
+    @include d(m) {
+        &:after {
+            height: 200%;
+
+        }
+    }
+}
+
 .contato {
     height: 100vh;
-    overflow: hidden;
+    min-height: 600px;
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0;
 
+    @include d(m) {
+        height: 100%;
+        overflow: initial;
 
-    &__contact {
-        @import "../components/contact";
     }
+
+    @import "../components/contact";
+
 
     &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        margin-top: 40px;
 
+        @include d(m) {
+            flex-wrap: wrap;
+            margin-top: 140px;
+        }
     }
+
+    .container {
+        @include d(s) {
+            padding: 0;
+        }
+    }
+}
+
+
+.inputs__group {
+
+
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .quebra {
@@ -73,5 +124,211 @@
     span {
         background-image: url("../img/intro-home.jpg");
 
+    }
+}
+
+
+
+
+form input,
+form #archive,
+textarea {
+    margin: 10px 0 !important;
+    // padding: 0 !important;
+    width: 100% !important;
+    max-height: 35px;
+}
+
+textarea {
+    width: 100% !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+    min-height: 206px;
+    max-height: 300px;
+
+    @include d(m) {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    @include d(s) {
+        min-height: 90px !important;
+        height: 120px;
+    }
+}
+
+#email,
+#state,
+#archive {
+    margin-right: 0 !important;
+}
+
+// form input::placeholder,
+
+// textarea::placeholder,
+// #archive {
+//     color: $cinza-claro !important;
+// }
+
+.select__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 10PX;
+
+    @include d(m) {
+        width: 100%;
+        margin: 0;
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        @include size(20px);
+        display: block;
+        right: 10px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        pointer-events: none;
+        @include bg-props-contain;
+        background-image: url("../img/down.svg");
+
+    }
+
+    select {
+        color: white;
+        padding: 10px 16px;
+        // margin: 12px 16px;
+        background-color: #f1642298;
+        border: none;
+        border-radius: 25px;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+
+        &::placeholder {
+            color: white;
+        }
+
+        @include d(m) {
+            width: 100%;
+            margin-left: 0px;
+            margin: 10px 0;
+
+        }
+
+
+    }
+}
+
+.button__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+
+    button {
+        margin: 0 !important;
+    }
+}
+
+.contato__mapa {
+    position: relative;
+
+    @include d(m) {
+        margin: 0 25px;
+    }
+
+    .mapa {
+        @include size(100%);
+        overflow: hidden;
+        @include img__full__after("../img/mapa.png");
+        height: 320px;
+        border-radius: 10px;
+
+        &:after {
+            z-index: -1;
+            overflow: hidden;
+            height: 320px;
+            border-radius: 10px;
+
+        }
+    }
+
+    .mapa__text {
+        margin-top: 10px;
+
+        p,
+        a {
+            color: branco;
+            font-family: $poppins;
+            color: white;
+
+            @include d(m) {
+                text-align: center;
+                display: grid;
+                justify-content: center;
+            }
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+//animation
+.js__scroll {
+    .contato {
+        &__contact {
+            transform: $translateY;
+            opacity: 0;
+        }
+
+    }
+
+    .mapa {
+        transform: $translateY;
+        opacity: 0;
+    }
+
+    .mapa__text {
+
+        p,
+        a {
+            transform: $translateY;
+            opacity: 0;
+        }
+    }
+
+
+
+}
+
+&.dcl {
+    .contato {
+        &__contact {
+            animation: posicao0 1s ease both;
+        }
+
+    }
+
+    .mapa {
+        animation: posicao0 1s ease both .6s;
+
+    }
+
+
+    .mapa__text {
+
+        p,
+        a {
+            animation: posicao0 1s ease both .8s;
+
+        }
     }
 }

@@ -13,32 +13,151 @@
 
 <body>
     <main id="page__contato">
-        <section id="contato" class="contato">
-            <div class="contato__wrapper">
-                <div class="contato__title">
-                    <h1>Fale Conosco</h1>
-                </div>
-                <div class="col-lg-6 px-0 contato__contact">
-                    <div class="blur-bg"></div>
-                    <div class="blur-card">
-                        <h3>Quero ser um franqueado</h3>
-                        <p>Preencha os campos abaixo e nossa área de Atendimento entrará em contato.</p>
-                        <form action="">
-                            <input id="name" type="text" value="" placeholder="Nome *">
-                            <input id="email" type="text" value="" placeholder="E-mail *">
-                            <input id="city" type="text" value="" placeholder="Cidade *">
-                            <input id="state" type="text" value="" placeholder="Estado *">
-                            <input id="phone" type="text" value="" placeholder="Telefone *">
-                            <div id="archive">Envie seu CV <button>Escolher Arquivo</button></div>
-                            <button id="submit" type="submit">Submeter</button>
-                        </form>
+        <div class="contato__blur"></div>
+        <section id="contato" class="contato js__scroll">
+            <div class="container">
+                <div class="contato__wrapper">
+
+                    <div class="col-lg-6 px-0 contato__contact ">
+                        <div class="blur-bg"></div>
+                        <div class="blur-card">
+                            <h3>Fale Conoscoo</h3>
+                            <p>Preencha os campos abaixo e nossa área de Atendimento entrará em contato.</p>
+                            <form action="">
+                                <div class="col-md-8   inputs__group">
+                                    <input id="name" type="text" value="" placeholder="Nome *">
+                                    <input id="sobrenome" type="text" value="" placeholder="Sobrenome *">
+                                    <input id="email" type="email" value="" placeholder="E-mail *">
+                                    <div class="select__wrapper">
+                                        <select name="conta" id="conta">
+                                            <option value="0">Assunto*</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4  col-md-8"><textarea placeholder="Descrição" name="" id=""
+                                        cols="30" rows="10"></textarea></div>
+                                <div class="button__container col-12 mx-auto">
+                                    <button id="submit" type="submit">Submeter</button>
+
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6 px-0">
-                    <img src="" alt="none">
+                    <div class="col-lg-5 px-0 contato__mapa js__scroll">
+                        <div class="mapa"></div>
+                        <div class="mapa__text">
+                            <p> Rua Jardim Botânico, n° 674 | sala 514 </p>
+                            <p>Bairro: Jardim Botânico - RJ</p>
+                            <p> <a href="#">Contato: +55 21 3734-8331</a></p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- MENU DESKTOP ===================== -->
+        <nav class="menu__desktop menu">
+            <div class="container">
+                <div class="menu__wrapper">
+                    <a class="menu__logo" href="#">
+                        <img src="assets/img/logo.png" alt="logo"></a>
+
+                    <ul class="menu__links">
+                        <li><a href="#"><strong>A empresa</strong></a></li>
+
+                        <li class="menu__dropdown dropdown__menu">
+                            <a href="#"><strong>Produtos</strong></a>
+
+                            <div id="dropdown__content">
+                                <a href="#">Residencial</a>
+                                <a href="#">Corporativo</a>
+                                <a href="#">Fazenda Solar</a>
+                                <a href="#">Assistencia Técnica</a>
+
+                            </div>
+                        </li>
+                        <li><a class="menu__btn" href="#">Franquias</a></li>
+                        <li><a class="menu__btn" href="#">Peça um Orçamento</a></li>
+
+                        <div class="menu__icon">
+                            <div class="menu__icon-click">
+                                <!-- <p>MENU</p> -->
+                                <div class="hamburguer"><i></i></div>
+                            </div>
+                        </div>
+                        <div class="atalhos">
+                            <ul class="menu__links-desktop">
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li class="menu__dropdown-desktop dropdown__menu">
+                                    <a href="#">Produtos</a>
+
+                                    <div class="menu__dropdown-container">
+                                        <div id="dropdown__content-mobile">
+                                            <a href="#">Residencial</a>
+                                            <a href="#">Corporativo</a>
+                                            <a href="#">Fazenda Solar</a>
+                                            <a href="#">Assistencia Técnica</a>
+
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a class="menu__btn" href="#">Botao</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- MENU MOBILE ====================== -->
+        <nav class="menu__mobile menu">
+            <div class="container">
+
+                <div class="menu__mobile-wrapper">
+                    <a href="#" class="menu__logo">
+                        <img src="assets/img/logo.png" alt="logo"></a>
+                    </a>
+
+                    <div class="menu__icon">
+                        <div class="menu__icon-click">
+                            <!-- <p>MENU</p> -->
+                            <div class="hamburguer"><i></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="atalhos">
+                <ul class="menu__links-mobile">
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="menu__dropdown-mobile  dropdown__menu">
+                        <a href="#">Produtos</a>
+
+                        <div class="menu__dropdown-container">
+                            <div id="dropdown__content-mobile">
+                                <a href="#">Residencial</a>
+                                <a href="#">Corporativo</a>
+                                <a href="#">Fazenda Solar</a>
+                                <a href="#">Assistencia Técnica</a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="menu__btn" href="#">Botao</a></li>
+                </ul>
+            </div>
+        </nav>
     </main>
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
 

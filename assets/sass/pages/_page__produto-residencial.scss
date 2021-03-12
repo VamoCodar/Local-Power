@@ -29,6 +29,9 @@
 
     .img__container {
         order: 2;
+        @include d(m){
+            order: initial;
+        }
     }
 }
 
@@ -344,45 +347,17 @@
 
 //animation
 .js__scroll {
-    // .produtos {
-    //     &__intro {
-    //         h1 {
-    //             transform: $translateY;
-    //             opacity: 0;
-    //         }
-    //     }
-
-    //     &__text {
-
-    //         h1,
-    //         p {
-    //             transform: $translateY;
-    //             opacity: 0;
-    //         }
-    //     }
-    // }
-
     h1 {
         transform: $translateY;
         opacity: 0;
     }
 
-
 }
-
-// &.dcl {
-//     .produtos__intro .titulo__principal h1 {
-//         animation: posicao0 1s ease both;
-//     }
-// }
 
 
 .js__scroll.animate {
-
-
     h1 {
         animation: posicao0 1s ease both;
-
         span {
 
             &:after {
@@ -393,6 +368,6 @@
 
     }
 
-
-
 }
+
+

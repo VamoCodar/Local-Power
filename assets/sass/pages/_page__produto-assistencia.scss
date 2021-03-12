@@ -40,14 +40,8 @@
     background: $branco-claro;
 
     h1 {
-        @import "../components/h1__centralizado";
-        display: block !important;
-        margin: 0 auto;
-        margin-bottom: 30px !important;
+        @include h1__centralizado;
 
-        @include d(s) {
-            zoom: .7;
-        }
     }
 
     p {
@@ -91,14 +85,8 @@
     padding: 60px 0;
 
     h1 {
-        @import "../components/h1__centralizado";
-        display: block !important;
-        margin: 0 auto;
-        margin-bottom: 30px !important;
-
-        @include d(s) {
-            zoom: .8;
-        }
+        @include h1__centralizado;
+        margin-bottom: 40px;
     }
 
     .container {
@@ -253,10 +241,12 @@
             }
         }
     }
-    .btn__container{
+
+    .btn__container {
         display: flex;
         justify-content: center;
-        a{
+
+        a {
             @include botao;
         }
     }
@@ -270,6 +260,7 @@
         filter: brightness(1) !important;
 
     }
+
     &__img {
         max-width: 80px;
         margin: 0 auto;
@@ -278,7 +269,66 @@
     }
 
 }
-#quebra{
+
+#quebra {
     @import "../components/quebra";
+
+}
+
+
+//animation
+.js__scroll {
+    h1 {
+        transform: $translateY;
+        opacity: 0;
+    }
+
+    &.monitoramento {
+        p {
+            transform: $translateY;
+            opacity: 0;
+        }
+    }
+
+    &.checkup {
+        .container {
+            >p {
+                transform: $translateY;
+                opacity: 0;
+            }
+        }
+    }
+
+}
+
+
+.js__scroll.animate {
+    h1 {
+        animation: posicao0 1s ease both;
+
+        span {
+
+            &:after {
+                transition-delay: .5s !important;
+            }
+
+        }
+
+    }
+
+    &.monitoramento {
+        p {
+            animation: posicao0 1s ease both .2s;
+
+        }
+    }
+    &.checkup {
+        .container {
+            >p {
+                animation: posicao0 1s ease both .2s;
+
+            }
+        }
+    }
 
 }

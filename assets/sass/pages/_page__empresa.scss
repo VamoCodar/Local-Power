@@ -268,14 +268,12 @@
     }
 
     h1 {
-        @import "../components/h1__centralizado";
+        @include h1__centralizado;
         margin: 0 auto;
         display: block !important;
         margin-bottom: 40px !important;
 
-        @include d(s) {
-            zoom: .7;
-        }
+        
     }
 
     p {
@@ -331,4 +329,56 @@
         background-image: url("../img/intro-home.jpg");
 
     }
+}
+
+
+//animation
+.js__scroll {
+    .intro__text {
+
+        h1,
+        p {
+            transform: $translateY;
+            opacity: 0;
+            will-change: transform;
+
+        }
+    }
+
+    h1 {
+        transform: $translateY;
+        opacity: 0;
+        will-change: transform;
+
+    }
+
+
+}
+
+&.dcl {
+    .intro__text {
+        h1 {
+            animation: posicao0 1s ease both;
+        }
+        p{
+            animation: posicao0 1s ease both .4s;
+        }
+    }
+}
+
+.js__scroll.animate {
+
+    h1 {
+        animation: posicao0 1s ease both;
+
+    }
+
+    span {
+
+        &:after {
+            transition-delay: .5s !important;
+        }
+
+    }
+
 }

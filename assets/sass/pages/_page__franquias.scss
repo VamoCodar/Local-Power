@@ -93,11 +93,13 @@
         min-height: 650px;
         display: flex;
         align-items: center;
+
         @include d(m) {
             height: 100%;
             flex-direction: column;
         }
     }
+
     &__text {
         color: white;
 
@@ -128,19 +130,20 @@
             }
 
             strong {
-                font-weight: 600;   
+                font-weight: 600;
             }
         }
     }
+
     h1 {
         font-family: $poppins;
-        font-size: clamp(24px, 2.5vw, 36px);  // COMM Alterei os valores para parecer mais com o modelo
+        font-size: clamp(24px, 2.5vw, 36px); // COMM Alterei os valores para parecer mais com o modelo
         font-weight: 600; // COMM Aqui também, 700 pareceu muito
         line-height: 140%;
     }
 
     p {
-        font-size:  clamp(14px, 1.2vw, 18px);
+        font-size: clamp(14px, 1.2vw, 18px);
         line-height: 180%;
         font-weight: 500;
         font-family: $poppins;
@@ -185,7 +188,8 @@
             max-height: 150px;
             padding-left: 20px;
 
-            h4, p {
+            h4,
+            p {
                 font-family: $poppins;
             }
 
@@ -202,9 +206,10 @@
                     font-size: 18px;
                 }
             }
+
             p {
                 font-size: 16px;
-                padding-top: 10px; 
+                padding-top: 10px;
 
                 @include d(m) {
                     font-size: clamp(12px, .7vw, 16px);
@@ -221,7 +226,7 @@
 
         }
 
-        .section__1{
+        .section__1 {
             grid-column: 1 / 12;
 
             img {
@@ -233,7 +238,7 @@
             }
         }
 
-        .section__2{
+        .section__2 {
             grid-column: 1 / 12;
 
             img {
@@ -245,7 +250,7 @@
             }
         }
 
-        .section__3{
+        .section__3 {
             grid-column: 1 / 12;
 
             img {
@@ -257,7 +262,7 @@
             }
         }
 
-        .section__4{
+        .section__4 {
             grid-column: 1 / 12;
 
             img {
@@ -269,7 +274,7 @@
             }
         }
 
-        .section__5{
+        .section__5 {
             grid-column: 1 / 12;
 
             img {
@@ -287,14 +292,18 @@
             margin: 15px auto;
             font-size: 18px;
         }
-        
+
         @include d(s) {
 
-            .section__1, .section__2, .section__3, .section__4, .section__5 {
-                display: flex;    
-                width: 100%; 
-                overflow: hidden; 
-                
+            .section__1,
+            .section__2,
+            .section__3,
+            .section__4,
+            .section__5 {
+                display: flex;
+                width: 100%;
+                overflow: hidden;
+
                 img {
                     display: flex;
                     position: relative;
@@ -307,6 +316,7 @@
                     filter: blur(.8px);
                     opacity: 0.15;
                 }
+
                 .porque__description {
                     display: flex;
                     flex-direction: column;
@@ -334,9 +344,8 @@
     }
 
     h1 {
-        @import "../components/h1__centralizado";
-        display: inline !important;
-        font-size: 32px !important;
+        @include h1__centralizado;
+        margin-bottom: 60px;
         max-width: 520px;
         line-height: 150%;
 
@@ -344,36 +353,13 @@
             font-size: 26px !important;
         }
 
-        span {
-            position: relative;
 
-            &::after {
-                content: "";
-                position: absolute;
-                background: #f16522;
-                width: 135px;
-                height: 3px;
-                display: block;
-                bottom: initial;
-                top: 42px;
-                left: 0;
-
-                @include d(s) {
-                    width: 110px;
-                    top: 34px;
-                }
-            }
-        }
-
-        &::after {
-            display: none;
-        }
 
     }
 }
 
 #modelo {
-    .modelo__titulo{
+    .modelo__titulo {
         padding-top: 60px;
         justify-content: center;
 
@@ -385,10 +371,10 @@
             span {
                 &:after {
                     bottom: -2px;
-    
+
                     @include d(m) {
                         bottom: 2px;
-    
+
                     }
                 }
             }
@@ -396,7 +382,7 @@
         }
     }
 
-    .modelo{
+    .modelo {
         @import "../components/full__projetos";
     }
 
@@ -414,8 +400,11 @@
 
 }
 
-.modelo, .store {                   // COMM BOTÃO DA SECTION
-     .titulo__secundario a {
+.modelo,
+.store {
+
+    // COMM BOTÃO DA SECTION
+    .titulo__secundario a {
         padding: 12px 15px !important;
     }
 }
@@ -457,7 +446,7 @@
 }
 
 .nosso__time {
-    
+
     @import "../components/quebra";
     height: clamp(620px, 100vh, 700px) !important;
 
@@ -499,4 +488,71 @@
         background-image: url("../img/intro-home.jpg");
 
     }
+}
+
+
+
+//animation
+.js__scroll {
+    .franquias {
+        &__contact {
+            transform: $translateY;
+            opacity: 0;
+        }
+
+        &__text {
+
+            h1,
+            p {
+                transform: $translateY;
+                opacity: 0;
+            }
+        }
+    }
+
+    h1 {
+        transform: $translateY;
+        opacity: 0;
+        will-change: transform;
+
+    }
+
+
+}
+
+&.dcl {
+    .franquias {
+        &__contact {
+            animation: posicao0 1s ease both .8s;
+        }
+
+        &__text {
+            h1 {
+                animation: posicao0 1s ease both;
+            }
+
+            p {
+                animation: posicao0 1s ease both .3s;
+            }
+
+        }
+    }
+}
+
+.js__scroll.animate {
+
+
+    h1 {
+        animation: posicao0 1s ease both;
+
+    }
+
+    span {
+
+        &:after {
+            transition-delay: .5s !important;
+        }
+
+    }
+
 }

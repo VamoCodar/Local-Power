@@ -329,7 +329,7 @@
 }
 
 
-.js__scroll.animate {
+&.dcl {
     .representantes {
         &__contact {
             animation: posicao0 1s ease both .8s;
@@ -346,6 +346,12 @@
 
         }
     }
+}
+
+
+
+.js__scroll.animate {
+
 
     h1 {
         animation: posicao0 1s ease both;
