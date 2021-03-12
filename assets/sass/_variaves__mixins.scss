@@ -11,11 +11,25 @@ sans-serif;
 $poppins: 'Poppins',
 sans-serif;
 
+@mixin img__full__after($url) {
+    &:after {
+        content: '';
+        @include bg-props-cover;
+        @include size(100%);
+        background-image: url($url);
+        inset: 0;
+        position: absolute;
+        display: block;
+        z-index: -1;
+    }
+
+}
 
 // PROJETO ===================================================
 // @import "./components/h1__centralizado";
 @import "./components/como__funciona";
 @import "./components/estilo__franquias";
+@import "./utilities/img__full__after";
 
 
 @mixin h1__centralizado($xl:40px, $md:26px) {
