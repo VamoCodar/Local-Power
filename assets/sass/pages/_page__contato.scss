@@ -44,8 +44,9 @@
         }
     }
 }
-.menu__links-mobile li a:not(a.menu__btn){
-    color: $preto  !important;
+
+.menu__links-mobile li a:not(a.menu__btn) {
+    color: $preto !important;
 }
 
 main {
@@ -239,6 +240,10 @@ textarea {
     display: flex;
     justify-content: center;
     margin-top: 25px;
+
+    @include d(m) {
+        margin-bottom: 20px;
+    }
 
     button {
         margin: 0 !important;
