@@ -1,7 +1,8 @@
 function verificaFullPage() {
-    const tamanho = window.matchMedia('(min-width: 992px)')
-    let alturaTela = window.innerHeight;
 
+    const tamanho = window.matchMedia('(min-width: 992px)')
+    
+    let alturaTela = window.innerHeight;
     if (alturaTela > 640 && alturaTela < 1000 && tamanho) {
         new fullpage('#fullpage', {
             //options here
@@ -11,6 +12,7 @@ function verificaFullPage() {
     } else {
         document.body.classList.add("no__animation")
     }
+
 }
 verificaFullPage()
 

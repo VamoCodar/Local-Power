@@ -21,7 +21,7 @@
 
 
         @include d(s) {
-            height: 300px;
+            height: 230px;
         }
 
         >.container {
@@ -45,6 +45,7 @@
 
         h1 {
             @include texto__foto;
+            font-size: clamp(32px, 4vw, 62px);
             text-transform: uppercase;
             font-family: $poppins;
         }

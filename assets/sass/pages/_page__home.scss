@@ -120,10 +120,18 @@
 
 .residenciais {
     @import "../components/full__projetos";
+
+    .img__container {
+        @include img__full__after("../img/residenciais.jpg");
+    }
 }
 
 .corporativos {
     @import "../components/full__projetos";
+
+    .img__container {
+        @include img__full__after("../img/corporativos.jpg");
+    }
 
     .img__container {
         order: 2;
@@ -143,10 +151,17 @@
 .fazenda {
     @import "../components/full__projetos";
 
+    .img__container {
+        @include img__full__after("../img/fazenda.jpg");
+    }
 }
 
 .eficiencia {
     @import "../components/full__projetos";
+
+    .img__container {
+        @include img__full__after("../img/assistencia.jpg");
+    }
 
     .img__container {
         order: 2;
@@ -171,11 +186,9 @@
 
 
 // animation
-
-
 @keyframes titulosSobem {
     0% {
-        transform: translateY(100px);
+        transform: translateY(180px);
         opacity: .2;
     }
 
@@ -247,8 +260,14 @@
     position: fixed !important;
 }
 
-&:not(.no__animation footer) {
-    footer {
-        transform: translateY(300px);
+
+.img__container {
+
+    @include d(s) {
+        &:after {
+            background-attachment: fixed !important;
+            filter: brightness(.4) /* blur(10) */;
+        }
     }
+
 }
