@@ -46,10 +46,14 @@ body {
   @import "../sass/pages/page__representantes";
 }
 
+.body__contato {
+  @import "../sass/pages/page__contato";
+
 .body__orcamento {
   @import "../sass/pages/page__produto-residencial";
   @import "../sass/pages/page__orcamento";
   //pega mesmo estilo de residencial ☝🏽
+
 }
 
 // produtos ===

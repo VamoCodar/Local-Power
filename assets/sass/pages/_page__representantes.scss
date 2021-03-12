@@ -159,7 +159,7 @@
 }
 
 .vantagens {
-    padding: 60px 0;
+    padding: 80px 0;
 
     .text__container {
         width: 100%;
@@ -167,9 +167,21 @@
         justify-content: center;
     
         h1 {
-            @import "../components/h1__centralizado";
+            @include h1__centralizado(34px, 26px);
+
+            span {
+                &:after {
+                    bottom: -2px;
+    
+                    @include d(m) {
+                        bottom: 2px;
+    
+                    }
+                }
+            }
+
             @include d(s) {
-                font-size: 26px;
+                padding-bottom: 40px;
             }
         }
     }
@@ -190,11 +202,25 @@
                     display: block;
                     margin: 0 auto;
                     object-fit: contain;
+
+                    @include d(m) {
+                        max-height: 120px;
+                    }
+
+                    @include d(s) {
+                        max-height: 80px;
+                        padding: 0;
+                    }
                 }
                 p {
+                    text-align: center;
                     padding-top: 20px;
                     font-family: $poppins;
                     font-weight: 500;
+
+                    @include d(s) {
+                        padding: 0 0 40px 0;
+                    }
                 }
 
                 @include d(m) {
@@ -213,9 +239,18 @@
             padding: 0;
         }
 
-        .btn__container a {
-            margin-top: 60px;
-            @include botao;
+        .btn__container {
+            display: flex;
+            justify-content: center;
+
+            a {
+                margin-top: 60px;
+                @include botao;
+
+                @include d(s) {
+                    margin-top: 20px;
+                }
+            }
         }
 
     }
@@ -232,6 +267,13 @@
     }
 
     @import "../components/passos";
+
+    &__item > span{
+        position: relative;
+        bottom: -25px;
+        right: -25px;
+
+    }
 
 }
 

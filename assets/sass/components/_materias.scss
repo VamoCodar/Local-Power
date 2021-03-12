@@ -1,21 +1,40 @@
 .text__container {
-    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     h1 {
-        @import "../components/h1__centralizado";
+        @include h1__centralizado;
+        margin-bottom: 40px;
 
-        @include d(s) {
-            font-size: 26px;
+        span {
+            &:after {
+                bottom: -2px;
+
+                @include d(m) {
+                    bottom: 2px;
+
+                }
+            }
         }
+    }
+
+    p {
+        text-align: center;
+        padding-bottom: 60px;
+        font-size: clamp(16px, 1.6vw, 22px);
+        font-family: $poppins;
+
     }
 }
 
 &__wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
+    .img__container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
 
     .row_images img {
         width: 100%;
@@ -23,17 +42,26 @@
         margin: 0 auto;
         max-width: 250px;
 
-        @include d(s) {
-            max-width: 200px;
-            padding: 30px 0;
+
+
+        img{
+            display: block;
+            margin: 0 auto;
+            width: 360px;
+    
+            @include d(m) {
+                padding-bottom: 60px;
+            }
         }
     }
 
-    @include d(m) {
-        height: 100%;
-        flex-direction: column;
-    }
-}
+    .botao {
+        display: flex;
+        justify-content: center;
+        padding-top: 60px;
+
+        a {
+            @include botao;
 
 .botao {
     padding-top: 60px;
@@ -44,7 +72,13 @@
         @include botao;
     }
 
-    @include d(s) {
-        padding-top: 40px;
+
+        @include d(m) {
+            padding-top: 0;
+        }
+    
+        @include d(s) {
+            padding-top: 40px;
+        }
     }
 }
