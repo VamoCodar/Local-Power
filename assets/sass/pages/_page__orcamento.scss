@@ -105,6 +105,10 @@
             @include bg-props-contain;
             background-image: url("../img/down.svg");
 
+            @include d(m){
+                right: 15px !important;
+            }
+
         }
 
         select {
@@ -126,16 +130,11 @@
 
             @include d(m) {
                 width: 100%;
-                margin-left: 5px;
-                margin-right: 5px;
+                margin: 5px ;
 
             }
 
-            @include d(s) {
-                width: 95%;
-                margin: 4px;
-
-            }
+            
         }
     }
 }
