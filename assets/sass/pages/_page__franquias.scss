@@ -426,7 +426,7 @@
         padding-bottom: 40px;
 
         span {
-            &:after {
+            &:after {   
                 bottom: 3px !important;
             }
         }
@@ -443,7 +443,6 @@
 .nosso__time {
 
     @import "../components/quebra";
-    height: clamp(620px, 100vh, 700px) !important;
 
     .img__fundo {
         background-attachment: fixed;
