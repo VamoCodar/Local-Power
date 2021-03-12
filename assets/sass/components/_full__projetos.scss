@@ -107,6 +107,7 @@
             // margin-bottom: 40px;
             margin-top: auto;
             padding: 8px 30px;
+            margin-bottom: 25px;
 
             @include d(s) {
                 margin-top: 60px;
@@ -114,5 +115,5 @@
 
         }
     }
-    
+
 }
