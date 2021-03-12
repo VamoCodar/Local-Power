@@ -44,6 +44,9 @@
         }
     }
 }
+.menu__links-mobile li a:not(a.menu__btn){
+    color: $preto  !important;
+}
 
 main {
     position: relative;
