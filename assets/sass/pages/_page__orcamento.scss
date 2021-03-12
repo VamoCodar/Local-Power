@@ -55,10 +55,10 @@
 
     &:before {
         background-image: url("../img/orca-1.jpg");
-        filter: brightness(.4); // COMM Menos brilho
+        filter: brightness(.6);
 
         @include d(s) {
-            background-image: url("../img/franquias-hero.jpg");
+            background-image: url("../img/orca-mobile.jpg");
         }
     }
 

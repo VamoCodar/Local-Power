@@ -42,7 +42,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(25px);
 
         @include d(s) {
             border-radius: 0;
@@ -52,6 +52,12 @@
 
     .blur-card {
         padding: 8px 16px;
+        backdrop-filter: blur(15px);
+        border-radius: 25px;
+        @include d(s){
+            border-radius: 0;
+        }
+
     }
 
     form {
