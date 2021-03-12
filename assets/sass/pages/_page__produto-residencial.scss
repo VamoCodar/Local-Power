@@ -29,6 +29,7 @@
 
     .img__container {
         order: 2;
+        
         @include d(m){
             order: initial;
         }

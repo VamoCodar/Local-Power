@@ -25,6 +25,10 @@
             max-width: 600px;
             margin: 0 auto;
         }
+
+        @include d(s) {
+            margin-top: -30px;
+        }
     }
 
     &__img {
@@ -35,9 +39,7 @@
 
         }
 
-        @include d(s) {
-            order: 2;
-        }
+
 
         span {
             @include bg-props-contain;
