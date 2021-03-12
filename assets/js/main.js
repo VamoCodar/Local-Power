@@ -1,3 +1,6 @@
+
+
+
 //  PAGES
 const pageHome = document.querySelector("#page__home")
 const pageProdutoSolar = document.querySelector("#page__produto-solar")
@@ -71,8 +74,8 @@ function escopoPages() {
 
         // 
     }
-     //page REPRESENTANTES ====================
-     else if (pageOrcamento) {
+    //page REPRESENTANTES ====================
+    else if (pageOrcamento) {
         document.body.classList.add("body__orcamento")
 
         // 
@@ -146,6 +149,24 @@ function fechaMenuMobile(click) {
 
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("dcl")
+    console.log("dom carregou");
+});
+
+
+//animação ao scrool TITULOS
+const sections = document.querySelectorAll(".js__scroll");
+
+function animaScroll() {
+    sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < 420) {
+            section.classList.add("animate");
+        }
+    });
+}
+window.addEventListener("scroll", animaScroll)
 
 // add classe DROP MOBILE 
 const dropMobile = document.querySelectorAll(".dropdown__menu")

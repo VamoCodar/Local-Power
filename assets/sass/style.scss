@@ -18,12 +18,17 @@
 //COMPONENTS GERAIS
 @import "../sass/components/menu";
 @import "../sass/components/footer";
+@import "../sass/components/animacao__geral";
 
 body {
   overflow-x: hidden;
   font-family: $font;
   @include scrollbars(8px, rgb(160, 160, 160));
-
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+body.dcl{
+  opacity: 1;
 }
 
 .container {
@@ -48,6 +53,7 @@ body {
 
 .body__contato {
   @import "../sass/pages/page__contato";
+}
 
 .body__orcamento {
   @import "../sass/pages/page__produto-residencial";

@@ -1,0 +1,13 @@
+@mixin img__full__after($url) {
+    &:after {
+        content: '';
+        @include bg-props-cover;
+        @include size(100%);
+        background-image: url( $url);
+        inset: 0;
+        position: absolute;
+        display: block;
+        z-index: -1;
+    }
+
+}

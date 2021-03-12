@@ -95,11 +95,13 @@
         min-height: 650px;
         display: flex;
         align-items: center;
+
         @include d(m) {
             height: 100%;
             flex-direction: column;
         }
     }
+
     &__text {
         color: white;
 
@@ -130,19 +132,20 @@
             }
 
             strong {
-                font-weight: 600;   
+                font-weight: 600;
             }
         }
     }
+
     h1 {
         font-family: $poppins;
-        font-size: clamp(24px, 2.5vw, 36px);  // COMM Alterei os valores para parecer mais com o modelo
+        font-size: clamp(24px, 2.5vw, 36px); // COMM Alterei os valores para parecer mais com o modelo
         font-weight: 600; // COMM Aqui também, 700 pareceu muito
         line-height: 140%;
     }
 
     p {
-        font-size:  clamp(14px, 1.2vw, 18px);
+        font-size: clamp(14px, 1.2vw, 18px);
         line-height: 180%;
         font-weight: 500;
         font-family: $poppins;
@@ -165,17 +168,17 @@
         width: 100%;
         display: flex;
         justify-content: center;
-    
+
         h1 {
             @include h1__centralizado(34px, 26px);
 
             span {
                 &:after {
                     bottom: -2px;
-    
+
                     @include d(m) {
                         bottom: 2px;
-    
+
                     }
                 }
             }
@@ -195,8 +198,8 @@
             justify-content: center;
             flex-wrap: wrap;
 
-            .vantagens__item{
-                img{
+            .vantagens__item {
+                img {
                     max-height: 150px;
                     padding: 10px 0;
                     display: block;
@@ -212,6 +215,7 @@
                         padding: 0;
                     }
                 }
+
                 p {
                     text-align: center;
                     padding-top: 20px;
@@ -268,12 +272,7 @@
 
     @import "../components/passos";
 
-    &__item > span{
-        position: relative;
-        bottom: -25px;
-        right: -25px;
 
-    }
 
 }
 
@@ -291,4 +290,74 @@
         background-image: url("../img/intro-home.jpg");
 
     }
+}
+
+// 
+@keyframes posicao0 {
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+//animation
+.js__scroll {
+    .representantes {
+        &__contact {
+            transform: $translateY;
+            opacity: 0;
+        }
+
+        &__text {
+
+            h1,
+            p {
+                transform: $translateY;
+                opacity: 0;
+            }
+        }
+    }
+
+    h1 {
+        transform: $translateY;
+        opacity: 0;
+    }
+
+
+}
+
+
+.js__scroll.animate {
+    .representantes {
+        &__contact {
+            animation: posicao0 1s ease both .8s;
+        }
+
+        &__text {
+            h1 {
+                animation: posicao0 1s ease both;
+            }
+
+            p {
+                animation: posicao0 1s ease both .3s;
+            }
+
+        }
+    }
+
+    h1 {
+        animation: posicao0 1s ease both;
+
+    }
+
+    span {
+
+        &:after {
+            transition-delay: .5s !important;
+        }
+
+    }
+
 }

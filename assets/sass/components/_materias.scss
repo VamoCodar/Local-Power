@@ -30,53 +30,72 @@
 
 &__wrapper {
 
-    .img__container{
+    .img__container {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: center;
         align-items: baseline;
-
-    .row_images img {
-        width: 100%;
-        display: block;
-        margin: 0 auto;
-        max-width: 250px;
+        gap: 20px;
 
 
+        @include d(m) {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            @include scrollbars(6px, $laranja, $branco-claro);
+            padding-bottom: 10px;
+            justify-content: flex-start;
 
-        img{
-            display: block;
-            margin: 0 auto;
-            width: 360px;
-    
+
+        }
+
+        .materias__item {
             @include d(m) {
-                padding-bottom: 60px;
+                min-width: 220px !important;
+                flex: initial;
             }
         }
+
+        .row_images img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 250px;
+
+
+
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 360px;
+
+                @include d(m) {
+                    padding-bottom: 60px;
+                }
+            }
+        }
+
+
+
     }
 
     .botao {
-        display: flex;
-        justify-content: center;
         padding-top: 60px;
+        display: grid;
+        margin: 0 auto;
+        place-items: center;
 
         a {
             @include botao;
-
-.botao {
-    padding-top: 60px;
-    display: block;
-    margin: 0 auto;
-
-    a {
-        @include botao;
-    }
+            margin-top: 40px;
+        }
 
 
         @include d(m) {
             padding-top: 0;
         }
-    
+
         @include d(s) {
             padding-top: 40px;
         }

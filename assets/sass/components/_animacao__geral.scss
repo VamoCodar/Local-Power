@@ -1,0 +1,23 @@
+.animate {
+    span {
+        position: relative;
+
+        &:after {
+            width: 100% !important;
+
+        }
+
+    }
+}
+
+$translateY: translateY(100px);
+$d1:100ms;
+$d2:200ms;
+$d3:300ms;
+$d4:400ms;
+$d5:500ms;
+$d6:600ms;
+$d7:700ms;
+$d8:800ms;
+$d9:900ms;
+$d10:1000ms;
