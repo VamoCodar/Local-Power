@@ -385,6 +385,10 @@
     .modelo {
         @import "../components/full__projetos";
         overflow: hidden;
+
+        &__wrapper{
+            height: clamp(620px, 100vh, 1000px);
+        }
     }
 
     .swiper-wrapper {
@@ -393,12 +397,11 @@
         .swiper-slide {
             & > img {
                 height: 100%;
+                width: 100%;
                 object-fit: cover;
-
-                @include d(s) {
-                    width: 100%;
-                    max-height: 200px;
-                }
+            }
+            @include d(s) {
+                height: 230px;
             }
         }
 
@@ -412,7 +415,6 @@
     .img__container {
         @include d(s) {
             order: -1;
-            height: 200px;
         }
     }
 
