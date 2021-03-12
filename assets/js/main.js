@@ -161,7 +161,7 @@ const sections = document.querySelectorAll(".js__scroll");
 function animaScroll() {
     sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < 420) {
+        if (sectionTop < 500) {
             section.classList.add("animate");
         }
     });
