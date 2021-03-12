@@ -36,6 +36,13 @@
         justify-content: center;
         align-items: baseline;
 
+    .row_images img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        max-width: 250px;
+
+
 
         img{
             display: block;
@@ -55,7 +62,16 @@
 
         a {
             @include botao;
-        }
+
+.botao {
+    padding-top: 60px;
+    display: block;
+    margin: 0 auto;
+
+    a {
+        @include botao;
+    }
+
 
         @include d(m) {
             padding-top: 0;

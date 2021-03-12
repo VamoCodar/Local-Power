@@ -337,8 +337,7 @@
             padding: 20px;
             border-radius: 10px;
             object-fit: contain;
-            min-height: 280px;
-
+            min-height: 320px;
             @include d(m) {
                 min-height: 200px;
 

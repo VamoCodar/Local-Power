@@ -26,6 +26,10 @@ body {
 
 }
 
+.container {
+  max-width: 1280px;
+}
+
 .body__home {
   @import "../sass/pages/page__home";
 }
@@ -44,6 +48,12 @@ body {
 
 .body__contato {
   @import "../sass/pages/page__contato";
+
+.body__orcamento {
+  @import "../sass/pages/page__produto-residencial";
+  @import "../sass/pages/page__orcamento";
+  //pega mesmo estilo de residencial ☝🏽
+
 }
 
 // produtos ===

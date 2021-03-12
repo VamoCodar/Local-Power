@@ -59,7 +59,7 @@
             gap: 10px;
         }  
     }
-    form > input, form > div{
+    form > input, form > div:not(.select__wrapper){
         color: white;
         padding: 10px 16px;
         margin: 12px 16px;

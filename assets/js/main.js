@@ -5,6 +5,8 @@ const pageEmpresa = document.querySelector("#page__empresa")
 const pageFranquias = document.querySelector("#page__franquias")
 const pageRepresentantes = document.querySelector("#page__representantes")
 const pageContato = document.querySelector("#page__contato")
+const pageOrcamento = document.querySelector("#page__orcamento")
+
 
 // produtos
 const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
@@ -63,9 +65,15 @@ function escopoPages() {
         // 
     }
 
-     //page REPRESENTANTES ====================
-     else if (pageRepresentantes) {
+    //page REPRESENTANTES ====================
+    else if (pageRepresentantes) {
         document.body.classList.add("body__representantes")
+
+        // 
+    }
+     //page REPRESENTANTES ====================
+     else if (pageOrcamento) {
+        document.body.classList.add("body__orcamento")
 
         // 
     }
@@ -141,6 +149,7 @@ function fechaMenuMobile(click) {
 
 // add classe DROP MOBILE 
 const dropMobile = document.querySelectorAll(".dropdown__menu")
+
 dropMobile.forEach((i) => {
     i.addEventListener("click", function (event) {
         event.preventDefault();
