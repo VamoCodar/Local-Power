@@ -23,14 +23,17 @@
 .eficiencia {
     @import "../components/full__projetos";
     margin-top: 100px;
-
+    height: calc(clamp(620px, 100vh, 1000px) - 100px) ;
+  
     .img__container {
         order: 2;
-
-        @include d(m) {
+        height: calc(clamp(620px, 100vh, 1000px) - 100px) ;
+        @include d(s) {
+            height: 230px;
             order: initial;
-            height: 200px;
+
         }
+       
     }
 
 }

@@ -1,7 +1,9 @@
 import Dom from './modules/constructors.js'; //selecionar elementos e gerenciar classe
 import animacaoHome from './modules/animation.js'; //animacao full scroll da home
 import menu from './modules/menu.js'; //js do menu
-import * as config from './modules/swiper__props.js'; //js do menu
+import * as config from './modules/swiper__props.js'; //Configs do Swiper
+
+menu() //executa function do menu
 
 //  PAGES
 const pageHome = new Dom().el("#page__home")
@@ -15,9 +17,9 @@ const pageOrcamento = new Dom().el("#page__orcamento")
 const pageProdutoAssistencia = new Dom().el("#page__produto-assistencia")
 const pageProdutoResidencial = new Dom().el("#page__produto-residencial")
 const pageProdutoCorporativo = new Dom().el("#page__produto-corporativo")
-menu() //executa function do menu
 
 function escopoPages() {
+
     if (pageHome) { //page HOME
         animacaoHome()
         new Dom().bodyClass("body__home")
@@ -27,11 +29,13 @@ function escopoPages() {
 
     } else if (pageFranquias) { //page FRANQUIA
         new Dom().bodyClass("body__franquias")
-        var swiper = new Swiper(".swiper-container", config.props);
+        new Swiper(".swiper-container", config.props);
 
     } else if (pageContato) { //page CONTATO 
+        new Dom().bodyClass("body__contato")
 
     }
+
     // PRODUTOS ===
     else if (pageProdutoSolar) { //page PRODUTO SOLAR
         new Dom().bodyClass("body__produto-solar")
@@ -51,9 +55,7 @@ function escopoPages() {
     } else if (pageOrcamento) { //page REPRESENTANTES
         new Dom().bodyClass("body__orcamento")
 
-
     }
 
 }
-
 escopoPages()

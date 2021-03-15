@@ -21,9 +21,9 @@
 }
 
 .produtos__intro {
-    height: calc(100vh - 100px) !important;
     @import "../components/full__projetos";
     margin-top: 100px;
+    height: calc(clamp(620px, 100vh, 1000px) - 100px) !important;
 
     @include d(s) {
         height: 100% !important;
@@ -31,7 +31,6 @@
 
     .img__container {
         order: 2;
-        height: calc(100vh - 100px);
 
         @include d(s) {
             height: 400px;
@@ -45,6 +44,7 @@
     }
 
     h1 {
+
         @include d(s) {
             text-align: center;
             margin: 0 auto;
@@ -73,7 +73,6 @@
             // @import "../components/h1__centralizado";
             @include h1__centralizado($md:32px);
             margin-bottom: 40px;
-
 
 
         }

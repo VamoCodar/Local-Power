@@ -4,7 +4,7 @@
 //  .toggle("classe")  toggle class
 //  .has("classe")  verifica class
 
-//  .element() retorna elemento
+//  .el() retorna elemento
 //  .elements node list
 //  .addClassAll("classe") class nodelist
 
@@ -14,7 +14,7 @@
 //  .bodyRemove("classe") remove class no body
 export default
 
-function $$(seletor) {
+function Dom(seletor) {
     //retorna lista de Elementos
     const items = document.querySelectorAll(seletor);
     this.elements = items;

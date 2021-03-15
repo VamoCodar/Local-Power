@@ -1,4 +1,11 @@
 &__contact {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    @include d(s) {
+        border-radius: 0;
+        backdrop-filter: blur(5px);
+    }
 
     h3,
     p {
@@ -29,8 +36,9 @@
     }
 
     .blur-bg {
-        z-index: -1;
         content: "";
+        z-index: -1;
+
         position: absolute;
         top: 0;
         left: 0;
@@ -38,23 +46,24 @@
         height: 100%;
         border-radius: 25px;
         padding: 32px;
-        background-color: rgba(30, 30, 30, 0.6);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        backdrop-filter: blur(25px);
+        background: rgba(30, 30, 30, .500);
+
+
 
         @include d(s) {
             border-radius: 0;
-            backdrop-filter: blur(5px);
+
         }
+
     }
 
     .blur-card {
         padding: 8px 16px;
-        backdrop-filter: blur(15px);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         border-radius: 25px;
-        @include d(s){
+
+        @include d(s) {
             border-radius: 0;
         }
 

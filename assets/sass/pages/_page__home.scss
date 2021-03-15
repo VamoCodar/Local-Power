@@ -65,6 +65,7 @@
 
         @include d(s) {
             background-image: url("../img/intro-home-mobile.jpg");
+            background-attachment: fixed;
 
 
         }
@@ -121,6 +122,7 @@
 .residenciais {
     @import "../components/full__projetos";
 
+
     .img__container {
         @include img__full__after("../img/residenciais.jpg");
         z-index: -1;
@@ -129,6 +131,7 @@
             filter: brightness(0.7);
         }
     }
+
 }
 
 .corporativos {
@@ -217,9 +220,9 @@
 }
 
 
-#fullpage {
-    will-change: transform;
-}
+// #fullpage {
+//     will-change: transform;
+// }
 
 .section {
     h1 {
@@ -289,4 +292,15 @@
         }
     }
 
+}
+
+
+
+// .footer__full
+.footer__full {
+    @import "../components/full__projetos";
+
+    h2 {
+        margin-top: 30px;
+    }
 }

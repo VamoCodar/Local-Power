@@ -60,7 +60,8 @@ export default function menu() {
 
     document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("dcl")
-        console.log("dom carregou");
+        console.log("DOMContentedLoaded");
+
     });
 
 
