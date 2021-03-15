@@ -728,12 +728,14 @@ a.menu__btn:hover {
         }
     }
 }
-.menu__desktop #dropdown__content{
+
+.menu__desktop #dropdown__content {
     overflow: hidden;
-    &:after{
-        content:"";
-        background:#f16522;
-        height:  2px;
+
+    &:after {
+        content: "";
+        background: #f16522;
+        height: 2px;
         width: 100%;
         position: absolute;
         left: 0;
@@ -743,4 +745,9 @@ a.menu__btn:hover {
         bottom: 0;
         margin: auto;
     }
+}
+
+#dropdown__content-mobile {
+    width: 140px;
+    background: #f4f4f494;
 }

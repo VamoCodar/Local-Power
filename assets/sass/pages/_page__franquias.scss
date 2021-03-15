@@ -140,6 +140,10 @@
         font-size: clamp(24px, 2.5vw, 36px); // COMM Alterei os valores para parecer mais com o modelo
         font-weight: 600; // COMM Aqui também, 700 pareceu muito
         line-height: 140%;
+
+        @include d(s) {
+            font-size: 22px;
+        }
     }
 
     p {
@@ -508,12 +512,14 @@
 .swiper-pagination {
     bottom: 80px !important;
 
-    @include d(s){
+    @include d(s) {
         bottom: 5px !important;
     }
-    .swiper-pagination-bullet{
+
+    .swiper-pagination-bullet {
         background: white;
     }
+
     .swiper-pagination-bullet-active {
         background: $laranja;
     }

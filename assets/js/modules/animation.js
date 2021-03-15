@@ -1,5 +1,6 @@
-function verificaFullPage() {
+export default
 
+function animacaoHome() {
     const tamanho = window.matchMedia('(min-width: 992px)')
 
     let alturaTela = window.innerHeight;
@@ -14,4 +15,3 @@ function verificaFullPage() {
     }
 
 }
-verificaFullPage()

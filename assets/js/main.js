@@ -1,201 +1,59 @@
+import Dom from './modules/constructors.js'; //selecionar elementos e gerenciar classe
+import animacaoHome from './modules/animation.js'; //animacao full scroll da home
+import menu from './modules/menu.js'; //js do menu
+import * as config from './modules/swiper__props.js'; //js do menu
+
 //  PAGES
-const pageHome = document.querySelector("#page__home")
-const pageProdutoSolar = document.querySelector("#page__produto-solar")
-const pageEmpresa = document.querySelector("#page__empresa")
-const pageFranquias = document.querySelector("#page__franquias")
-const pageRepresentantes = document.querySelector("#page__representantes")
-const pageContato = document.querySelector("#page__contato")
-const pageOrcamento = document.querySelector("#page__orcamento")
-
-
+const pageHome = new Dom().el("#page__home")
+const pageProdutoSolar = new Dom().el("#page__produto-solar")
+const pageEmpresa = new Dom().el("#page__empresa")
+const pageFranquias = new Dom().el("#page__franquias")
+const pageRepresentantes = new Dom().el("#page__representantes")
+const pageContato = new Dom().el("#page__contato")
+const pageOrcamento = new Dom().el("#page__orcamento")
 // produtos
-const pageProdutoAssistencia = document.querySelector("#page__produto-assistencia")
-const pageProdutoResidencial = document.querySelector("#page__produto-residencial")
-const pageProdutoCorporativo = document.querySelector("#page__produto-corporativo")
-
-
-
+const pageProdutoAssistencia = new Dom().el("#page__produto-assistencia")
+const pageProdutoResidencial = new Dom().el("#page__produto-residencial")
+const pageProdutoCorporativo = new Dom().el("#page__produto-corporativo")
+menu() //executa function do menu
 
 function escopoPages() {
+    if (pageHome) { //page HOME
+        animacaoHome()
+        new Dom().bodyClass("body__home")
 
-    //page HOME ========================
-    if (pageHome) {
-        document.body.classList.add("body__home")
-        // 
+    } else if (pageEmpresa) { //page EMPRESA
+        new Dom().bodyClass("body__empresa")
+
+    } else if (pageFranquias) { //page FRANQUIA
+        new Dom().bodyClass("body__franquias")
+        var swiper = new Swiper(".swiper-container", config.props);
+
+    } else if (pageContato) { //page CONTATO 
+
     }
-    //page EMPRESA ====================
-    else if (pageEmpresa) {
-        document.body.classList.add("body__empresa")
-        // 
-    }
+    // PRODUTOS ===
+    else if (pageProdutoSolar) { //page PRODUTO SOLAR
+        new Dom().bodyClass("body__produto-solar")
 
-    //page FRANQUIAS ====================
-    else if (pageFranquias) {
-        document.body.classList.add("body__franquias")
-        const props = {
-            loop: true,
-            effect: 'fade',
+    } else if (pageProdutoAssistencia) { //page PRODUTO ASSISTENCIA
+        new Dom().bodyClass("body__produto-assistencia")
 
-            autoplay: {
-                delay: 1400,
-                disableOnInteraction: true,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
-            },
-        }
-        var swiper = new Swiper(".swiper-container", props);
+    } else if (pageProdutoResidencial) { //page PRODUTO RESIDENCIAL
+        new Dom().bodyClass("body__produto-residencial")
+
+    } else if (pageProdutoCorporativo) { //page PRODUTO CORPORATIVO
+        new Dom().bodyClass("body__produto-corporativo")
+
+    } else if (pageRepresentantes) { //page REPRESENTANTES
+        new Dom().bodyClass("body__representantes")
+
+    } else if (pageOrcamento) { //page REPRESENTANTES
+        new Dom().bodyClass("body__orcamento")
 
 
-
-
-
-        // 
-    }
-
-    //page CONTATO ====================
-    else if (pageContato) {
-        document.body.classList.add("body__contato")
-
-        // 
-    }
-
-    // PRODUTOS
-    //page PRODUTO SOLAR ====================
-    else if (pageProdutoSolar) {
-        document.body.classList.add("body__produto-solar")
-        // 
-    }
-    //page PRODUTO ASSISTENCIA ====================
-    else if (pageProdutoAssistencia) {
-        document.body.classList.add("body__produto-assistencia")
-        // 
-    }
-    //page PRODUTO RESIDENCIAL ====================
-    else if (pageProdutoResidencial) {
-        document.body.classList.add("body__produto-residencial")
-        // 
-    }
-    //page PRODUTO CORPORATIVO ====================
-    else if (pageProdutoCorporativo) {
-        document.body.classList.add("body__produto-corporativo")
-        // 
-    }
-
-    //page REPRESENTANTES ====================
-    else if (pageRepresentantes) {
-        document.body.classList.add("body__representantes")
-
-        // 
-    }
-    //page REPRESENTANTES ====================
-    else if (pageOrcamento) {
-        document.body.classList.add("body__orcamento")
-
-        // 
     }
 
 }
 
 escopoPages()
-
-
-
-
-//  SCRIPT GERAIS DAS PAGES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// menu preenchido 
-function menuPreenchido() {
-    const menuFixo = document.querySelectorAll(".menu");
-
-    menuFixo.forEach((i) => {
-        if (window.pageYOffset >= 20) {
-            document.body.classList.add("ativo__scroll");
-
-        } else if (window.pageYOffset < 50) {
-            document.body.classList.remove("ativo__scroll");
-        }
-    });
-}
-menuPreenchido();
-
-
-/* abre & fecha menu  */
-const menuItem = document.querySelectorAll(".menu__icon-click")
-const linksMenu = document.querySelectorAll(".atalhos")
-const mediaQuery = window.matchMedia('(min-width: 992px)')
-
-function menuMobile() {
-    if (!document.body.classList.contains("menu__open")) {
-        document.body.classList.add("menu__open");
-
-    } else if (document.body.classList.contains("menu__open")) {
-
-        linksMenu.forEach((i) => {
-            i.setAttribute(
-                "style",
-                "animation: voltaMenu 250ms both ease-out;"
-            );
-            setTimeout(() => {
-                i.removeAttribute("style", "animation");
-                document.body.classList.remove("menu__open");
-            }, 250);
-        })
-    }
-}
-
-
-/* FECHA MENU SE CLICAR PARTE PRETA */
-function fechaMenuMobile(click) {
-    const partePreta = document.querySelector(".fundo__black")
-    if (document.body.classList.contains("menu__open") && click.target === partePreta) {
-
-        linksMenu.forEach((i) => {
-            i.setAttribute(
-                "style",
-                "animation: voltaMenu 250ms both ease-out;"
-            );
-            setTimeout(() => {
-                i.removeAttribute("style", "animation");
-                document.body.classList.remove("menu__open");
-            }, 250);
-        })
-    }
-
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("dcl")
-    console.log("dom carregou");
-});
-
-
-//animação ao scrool TITULOS
-const sections = document.querySelectorAll(".js__scroll");
-
-function animaScroll() {
-    sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < 500) {
-            section.classList.add("animate");
-        }
-    });
-}
-window.addEventListener("scroll", animaScroll)
-
-// add classe DROP MOBILE 
-const dropMobile = document.querySelectorAll(".dropdown__menu")
-
-dropMobile.forEach((i) => {
-    i.addEventListener("click", function (event) {
-        event.preventDefault();
-        i.classList.toggle("abre")
-    })
-})
-
-//eventos
-menuItem.forEach((i) => {
-    i.addEventListener("click", menuMobile)
-})
-document.body.addEventListener("click", fechaMenuMobile)
-window.addEventListener("scroll", menuPreenchido);

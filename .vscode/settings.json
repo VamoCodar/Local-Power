@@ -34,6 +34,7 @@
     //config pessoais
     "editor.lineHeight": 26,
     "workbench.editor.tabSizing": "fit",
+    "liveServer.settings.port": 5501,
 
 }
 
